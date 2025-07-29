@@ -321,6 +321,21 @@ body {
     background-clip: text;
 }
 
+.star.three-quarter {
+    position: relative;
+    display: inline-block;
+    color: #6b7280; /* base gray */
+}
+
+.star.three-quarter::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 75%;
+    overflow: hidden;
+    color: #fbbf24; /* yellow/gold */
+}
+
 .rating-text {
     color: #d1d5db;
     font-weight: 600;
@@ -351,13 +366,13 @@ body {
     left: 0;
 }
 
-.course-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid #374151;
+.course-footer .btn {
+    width: 140px;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1rem;
 }
+
 
 .pricing {
     display: flex;
