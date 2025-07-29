@@ -1,5 +1,19 @@
+# Ignore other site subdirectories (not part of this repo)
+frtb_fundamentals/
+mastering_interest_rate_derivatives/
+mastering_mbs_and_abs/
+tracking/
+
+# Ignore analytics script that lives on the server
+send_daily_analytics.sh
+
+# Ignore system, backup, and temporary files
+*~
+*.bak
+*.swp
+*.log
 .DS_Store
-/frtb_fundamentals/
-/mastering_interest_rate_derivatives/
-/mastering_mbs_and_abs/
-/tracking/
+Thumbs.db
+
+# Optional: ignore Apache artifacts if they appear here
+.htaccess
