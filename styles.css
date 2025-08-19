@@ -12,6 +12,26 @@ body {
     background-color: #111827;
 }
 
+.ticker-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #030712;
+    color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #374151;
+    z-index: 1100;
+    font-size: 0.9rem;
+}
+
+.ticker-item {
+    margin: 0 0.5rem;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -21,7 +41,7 @@ body {
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 0;
+    top: 40px;
     left: 0;
     right: 0;
     background: rgba(17, 24, 39, 0.95);
