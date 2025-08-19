@@ -8,6 +8,11 @@
     <link rel="icon" href="assets/favicon.png" type="image/png">
 </head>
 <body>
+    <div class="ticker-bar">
+        <div class="ticker-item">BTC: <span id="btc-price">--</span></div>
+        <div class="ticker-item">S&amp;P 500 Today: <span id="sp500-price">--</span></div>
+        <div class="ticker-item">ETH: <span id="eth-price">--</span></div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -15,7 +20,6 @@
             <div class="nav-menu">
                 <a href="#courses" class="nav-link">Courses</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#games" class="nav-link">Games</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
         </div>
@@ -35,7 +39,6 @@
             </p>
             <div class="hero-buttons">
                 <a href="#courses" class="btn btn-primary">Explore Courses</a>
-                <a href="#games" class="btn btn-secondary">View Games</a>
             </div>
         </div>
     </section>
@@ -45,7 +48,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Professional Finance Courses</h2>
-                <p>Master advanced financial concepts with our comprehensive training programs designed by industry experts with 30+ years of experience.</p>
+                <p>Master advanced financial concepts with our comprehensive training programs designed by industry experts with 30+ years of experience. Courses are taught by our founder and include Excel and Python examples.</p>
             </div>
             
             <div class="courses-grid">
@@ -187,7 +190,7 @@
                     <h2>About TG Investments and Research</h2>
                     <p>We try to be innovative. Our mission is to provide cutting-edge financial education and open-source technology tools for both retail and professional investors.</p>
                     <p>With over 30 years of experience in capital markets across New York, London, and Paris, our founder Tim Glauner brings unparalleled expertise as a Wall Street quant with a strong NY professional career, specializing in quantitative finance, regulatory frameworks, and structured products.</p>
-                    <p>Our founder is also an alumnus of the Courant Institute of Mathematical Sciences at New York University, further solidifying our commitment to rigorous quantitative approaches.</p>
+                    <p>Our founder is also an alumnus of the Courant Institute of Mathematical Sciences at New York University and the Technical University of Karlsruhe, further solidifying our commitment to rigorous quantitative approaches.</p>
                     
                     <div class="stats-grid">
                         <div class="stat">
@@ -318,6 +321,28 @@
                 }
             });
         });
+
+        // Price tickers for BTC, ETH, and S&P 500
+        async function fetchTickers() {
+            try {
+                const cryptoRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+                const cryptoData = await cryptoRes.json();
+                document.getElementById('btc-price').textContent = '$' + cryptoData.bitcoin.usd.toLocaleString();
+                document.getElementById('eth-price').textContent = '$' + cryptoData.ethereum.usd.toLocaleString();
+            } catch (err) {
+                console.error('Error fetching crypto prices', err);
+            }
+
+            try {
+                const spRes = await fetch('https://query1.finance.yahoo.com/v7/finance/quote?symbols=%5EGSPC');
+                const spData = await spRes.json();
+                const spPrice = spData.quoteResponse.result[0].regularMarketPrice;
+                document.getElementById('sp500-price').textContent = spPrice.toLocaleString();
+            } catch (err) {
+                console.error('Error fetching S&P 500 price', err);
+            }
+        }
+        fetchTickers();
     </script>
 </body>
 </html>
