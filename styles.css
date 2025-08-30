@@ -201,7 +201,7 @@ body {
 
 /* Sections */
 .courses-section,
-.games-section {
+.projects-section {
     background: #1f2937;
     padding: 80px 0;
 }
@@ -489,15 +489,15 @@ body {
     line-height: 1.6;
 }
 
-/* Games Section */
-.games-grid {
+/* Projects Section */
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-.game-card {
+.project-card {
     background: #111827;
     padding: 2rem;
     border-radius: 12px;
@@ -507,23 +507,23 @@ body {
     position: relative;
 }
 
-.game-card:hover {
+.project-card:hover {
     border-color: #6b7280;
     transform: translateY(-4px);
 }
 
-.game-icon {
+.project-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-.game-card h3 {
+.project-card h3 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
-.game-card p {
+.project-card p {
     color: #9ca3af;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
@@ -651,7 +651,7 @@ body {
         gap: 1rem;
     }
     
-    .games-grid {
+    .projects-grid {
         grid-template-columns: 1fr;
     }
     
@@ -684,7 +684,7 @@ body {
     
     .course-card,
     .feature-card,
-    .game-card {
+    .project-card {
         margin: 0 10px;
     }
     
