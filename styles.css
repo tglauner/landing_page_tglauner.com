@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --ticker-height: 32px;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
@@ -21,8 +25,10 @@ body {
     color: #f3f4f6;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
-    padding: 0.25rem 0;
+    height: var(--ticker-height);
+    padding: 0;
     border-bottom: 1px solid #374151;
     z-index: 1100;
     font-size: 0.9rem;
@@ -41,7 +47,7 @@ body {
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 40px;
+    top: calc(var(--ticker-height) + 1px);
     left: 0;
     right: 0;
     background: rgba(17, 24, 39, 0.95);
