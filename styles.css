@@ -511,6 +511,8 @@ body {
     border: 1px solid #374151;
     transition: all 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -533,6 +535,10 @@ body {
     color: #9ca3af;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
+}
+
+.project-card .btn {
+    margin-top: auto;
 }
 
 .status-badge {
