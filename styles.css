@@ -7,6 +7,18 @@
 
 :root {
     --ticker-height: 32px;
+    --navbar-height: 72px;
+    --header-offset: calc(var(--ticker-height) + var(--navbar-height));
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 112px;
+    }
+}
+
+html {
+    scroll-padding-top: var(--header-offset);
 }
 
 body {
@@ -14,6 +26,7 @@ body {
     line-height: 1.6;
     color: #ffffff;
     background-color: #111827;
+    padding-top: var(--header-offset);
 }
 
 .ticker-bar {
@@ -93,7 +106,7 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 100vh;
+    min-height: calc(100vh - var(--header-offset));
     background-image: url('assets/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -103,6 +116,10 @@ body {
     justify-content: center;
     position: relative;
     text-align: center;
+}
+
+section {
+    scroll-margin-top: var(--header-offset);
 }
 
 .hero-overlay {
