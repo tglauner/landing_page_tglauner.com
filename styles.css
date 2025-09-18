@@ -229,6 +229,7 @@ section {
     padding: 80px 0;
 }
 
+.prototypes-section,
 .about-section,
 .contact-section {
     background: #111827;
@@ -251,6 +252,92 @@ section {
     color: #9ca3af;
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Prototypes Section */
+.prototype-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 3rem;
+    align-items: stretch;
+}
+
+.prototype-description,
+.prototype-cta-card {
+    background: #0f172a;
+    border: 1px solid #1f2937;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.prototype-description h3,
+.prototype-cta-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.prototype-description p,
+.prototype-cta-card p {
+    color: #9ca3af;
+    line-height: 1.7;
+}
+
+.prototype-list {
+    list-style: none;
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.75rem;
+}
+
+.prototype-list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.prototype-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.prototype-list h4 {
+    font-size: 1.2rem;
+    color: #f3f4f6;
+    margin-bottom: 0.5rem;
+}
+
+.prototype-cta-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.prototype-badge {
+    align-self: center;
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.2);
+    color: #60a5fa;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.prototype-cta-card .btn {
+    align-self: center;
+    min-width: 220px;
+}
+
+.prototype-note {
+    font-size: 0.95rem;
+    color: #9ca3af;
 }
 
 /* Courses Grid */
@@ -669,7 +756,17 @@ section {
     .courses-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    .prototype-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .prototype-description,
+    .prototype-cta-card {
+        padding: 2rem;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -716,7 +813,11 @@ section {
     .project-card {
         margin: 0 10px;
     }
-    
+
+    .prototype-cta-card .btn {
+        width: 100%;
+    }
+
     .course-footer {
         flex-direction: column;
         gap: 1rem;
