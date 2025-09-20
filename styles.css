@@ -223,17 +223,16 @@ section {
 }
 
 /* Sections */
-.courses-section,
-.projects-section {
-    background: #1f2937;
+section.content-section {
     padding: 80px 0;
 }
 
-.prototypes-section,
-.about-section,
-.contact-section {
+section.content-section:nth-of-type(even) {
+    background: #1f2937;
+}
+
+section.content-section:nth-of-type(odd) {
     background: #111827;
-    padding: 80px 0;
 }
 
 .section-header {
