@@ -240,6 +240,22 @@ section.content-section:nth-of-type(odd) {
     margin-bottom: 4rem;
 }
 
+.section-eyebrow {
+    display: inline-block;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #60a5fa;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.section-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
 .section-header h2 {
     font-size: 3rem;
     font-weight: bold;
@@ -495,11 +511,25 @@ section.content-section:nth-of-type(odd) {
     left: 0;
 }
 
-.course-footer .btn {
-    width: 140px;
+.course-footer {
+    border-top: 1px solid #374151;
+    margin-top: 2rem;
+    padding-top: 1.75rem;
+    display: flex;
+    justify-content: center;
+}
+
+.course-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.course-actions .btn {
+    min-width: 180px;
     text-align: center;
-    padding: 12px 0;
-    font-size: 1rem;
 }
 
 
@@ -722,11 +752,9 @@ section.content-section:nth-of-type(odd) {
     margin: 0 auto;
 }
 
-.footer-map iframe {
-    width: 100%;
-    height: 300px;
-    border: 0;
-    border-radius: 8px;
+.footer-map .btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
 }
 
 /* Responsive Design */
@@ -734,24 +762,28 @@ section.content-section:nth-of-type(odd) {
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 2rem;
     }
-    
+
     .hero-description {
         font-size: 1.2rem;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .nav-menu {
         display: none;
     }
-    
+
+    .section-header h1 {
+        font-size: 2.4rem;
+    }
+
     .courses-grid {
         grid-template-columns: 1fr;
     }
