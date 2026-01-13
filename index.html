@@ -71,8 +71,8 @@
                         
                         <div class="course-footer">
                             <div class="course-actions">
-                                <a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
-                                <a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
+                                <a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
+                                <a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
                             </div>
                         </div>
                     </div>
@@ -112,8 +112,8 @@
                         
                         <div class="course-footer">
                             <div class="course-actions">
-                                <a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
-                                <a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
+                                <a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
+                                <a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
                             </div>
                         </div>
                     </div>
@@ -153,12 +153,31 @@
                         
                         <div class="course-footer">
                             <div class="course-actions">
-                                <a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
-                                <a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_NOV_2025" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
+                                <a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Sign Up on Udemy</a>
+                                <a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_JAN_2026" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations Section - Side by Side -->
+    <section class="animations-section">
+        <div class="animations-container">
+            <!-- Left Animation - Stochastic Curves -->
+            <div class="animation-panel animation-left">
+                <canvas id="interestRateCanvas"></canvas>
+                <div class="hero-overlay-content">
+                    <h2 class="animation-title">Stochastic Interest Rate Curves</h2>
+                </div>
+            </div>
+            
+            <!-- Right Animation - SOFR Curve -->
+            <div class="animation-panel animation-right">
+                <canvas id="sofrCurveCanvas"></canvas>
+                <div class="curve-label">SOFR Interest Rate Curve</div>
             </div>
         </div>
     </section>
@@ -284,6 +303,679 @@
     </footer>
 
     <script>
+        // Stochastic Interest Rate Curves Animation
+        (function() {
+            const canvas = document.getElementById('interestRateCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            let animationId;
+            let particles = [];
+            let curves = [];
+            
+            // Scientific/physics lab colors - muted and professional
+            const curveColors = [
+                { r: 0, g: 255, b: 150 },      // Oscilloscope green
+                { r: 64, g: 200, b: 224 },     // Muted cyan
+                { r: 180, g: 200, b: 220 }     // Subtle blue-gray
+            ];
+            
+            // Set canvas size
+            let initCurves; // Will be assigned after class definition
+            function resizeCanvas() {
+                const oldWidth = canvas.width || 0;
+                const oldHeight = canvas.height || 0;
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                
+                // Reinitialize curves if canvas size changed and initCurves is available
+                if (initCurves && (oldWidth !== canvas.width || oldHeight !== canvas.height)) {
+                    if (canvas.width > 0 && canvas.height > 0) {
+                        initCurves();
+                    }
+                }
+            }
+            
+            // Particle class
+            class Particle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.radius = Math.random() * 2 + 1;
+                    this.life = 1.0;
+                    this.decay = Math.random() * 0.005 + 0.002;
+                    this.color = curveColors[Math.floor(Math.random() * curveColors.length)];
+                }
+                
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.life -= this.decay;
+                    this.vx *= 0.99;
+                    this.vy *= 0.99;
+                }
+                
+                draw() {
+                    if (this.life <= 0) return;
+                    ctx.save();
+                    ctx.globalAlpha = this.life * 0.3;
+                    ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0.4)`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius * 1.5, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+            
+            // Stochastic Curve class (Geometric Brownian Motion)
+            class StochasticCurve {
+                constructor(color, baseLevel, volatility) {
+                    this.color = color;
+                    this.baseLevel = baseLevel; // Base interest rate level
+                    this.volatility = volatility;
+                    this.points = [];
+                    this.numPoints = 120;
+                    this.drift = (Math.random() - 0.5) * 0.001;
+                    this.amplitudePhase = Math.random() * Math.PI * 2; // Random starting phase for amplitude oscillation
+                    this.amplitudeSpeed = (Math.random() * 0.002 + 0.001); // Speed of amplitude oscillation
+                    this.baseAmplitude = 0.25; // Base amplitude (25% of canvas height)
+                    this.amplitudeVariation = 0.15; // How much amplitude can vary (±15%)
+                    this.initialize();
+                }
+                
+                initialize() {
+                    const spacing = canvas.width / this.numPoints;
+                    for (let i = 0; i <= this.numPoints; i++) {
+                        const x = i * spacing;
+                        const y = canvas.height * 0.5 + (Math.random() - 0.5) * canvas.height * 0.3;
+                        this.points.push({ x, y, vy: 0 });
+                    }
+                }
+                
+                getCurrentAmplitude() {
+                    // Oscillate amplitude between baseAmplitude ± amplitudeVariation
+                    const oscillation = Math.sin(this.amplitudePhase) * this.amplitudeVariation;
+                    return this.baseAmplitude + oscillation;
+                }
+                
+                update() {
+                    // Update amplitude phase for oscillation
+                    this.amplitudePhase += this.amplitudeSpeed;
+                    
+                    // Get current amplitude (oscillates over time)
+                    const currentAmplitude = this.getCurrentAmplitude();
+                    const centerY = this.baseLevel * canvas.height;
+                    const amplitudeHeight = currentAmplitude * canvas.height;
+                    
+                    // Geometric Brownian Motion: dS = mu*S*dt + sigma*S*dW
+                    for (let i = 1; i < this.points.length; i++) {
+                        const point = this.points[i];
+                        const prevPoint = this.points[i - 1];
+                        
+                        // Mean reversion towards base level with dynamic amplitude bounds
+                        const meanReversion = (centerY - point.y) * 0.01;
+                        
+                        // Correlation with adjacent points for smoother curves
+                        const correlation = (prevPoint.y - point.y) * 0.05;
+                        
+                        // Stochastic component (Brownian motion) - scale with current amplitude
+                        const randomWalk = (Math.random() - 0.5) * this.volatility * (0.5 + currentAmplitude * 2);
+                        
+                        // Update velocity
+                        point.vy = point.vy * 0.8 + meanReversion + correlation + randomWalk + this.drift;
+                        
+                        // Update position
+                        point.y += point.vy;
+                        
+                        // Dynamic bounds based on current amplitude
+                        const minY = centerY - amplitudeHeight;
+                        const maxY = centerY + amplitudeHeight;
+                        
+                        // Keep within bounds with smooth reflection
+                        if (point.y < minY) {
+                            point.y = minY;
+                            point.vy *= -0.5;
+                        } else if (point.y > maxY) {
+                            point.y = maxY;
+                            point.vy *= -0.5;
+                        }
+                    }
+                    
+                    // Emit particles along the curve (very infrequent for cleaner look)
+                    if (Math.random() < 0.05) {
+                        const randomIndex = Math.floor(Math.random() * this.points.length);
+                        const point = this.points[randomIndex];
+                        particles.push(new Particle(point.x, point.y));
+                    }
+                }
+                
+                draw() {
+                    // Draw thin scientific line
+                    ctx.save();
+                    ctx.lineWidth = 1;
+                    ctx.lineCap = 'round';
+                    ctx.lineJoin = 'round';
+                    
+                    // Solid color, no gradient
+                    ctx.strokeStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0.9)`;
+                    
+                    ctx.beginPath();
+                    ctx.moveTo(this.points[0].x, this.points[0].y);
+                    
+                    // Draw smooth curve using quadratic bezier
+                    for (let i = 1; i < this.points.length; i++) {
+                        const current = this.points[i];
+                        const previous = this.points[i - 1];
+                        const controlX = (previous.x + current.x) / 2;
+                        const controlY = (previous.y + current.y) / 2;
+                        ctx.quadraticCurveTo(previous.x, previous.y, controlX, controlY);
+                    }
+                    ctx.lineTo(this.points[this.points.length - 1].x, this.points[this.points.length - 1].y);
+                    ctx.stroke();
+                    
+                    ctx.restore();
+                }
+            }
+            
+            // Draw very subtle grid background
+            function drawGrid() {
+                ctx.strokeStyle = 'rgba(100, 150, 180, 0.04)';
+                ctx.lineWidth = 0.5;
+                
+                // Vertical lines
+                const vSpacing = canvas.width / 12;
+                for (let x = 0; x <= canvas.width; x += vSpacing) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+                }
+                
+                // Horizontal lines
+                const hSpacing = canvas.height / 8;
+                for (let y = 0; y <= canvas.height; y += hSpacing) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+            }
+            
+            // Initialize curves (fewer curves for cleaner look)
+            initCurves = function() {
+                curves = [];
+                const levels = [0.5, 0.45, 0.55];
+                const volatilities = [6, 8, 7];
+                curveColors.forEach((color, i) => {
+                    curves.push(new StochasticCurve(color, levels[i], volatilities[i]));
+                });
+            };
+            
+            // Animation loop
+            function animate() {
+                ctx.fillStyle = 'rgba(3, 7, 18, 0.08)'; // Subtle fade effect
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                // Draw grid (very subtle background)
+                drawGrid();
+                
+                // Update and draw curves
+                curves.forEach(curve => {
+                    curve.update();
+                    curve.draw();
+                });
+                
+                // Update and draw particles
+                particles = particles.filter(particle => {
+                    particle.update();
+                    particle.draw();
+                    return particle.life > 0;
+                });
+                
+                // Limit particles (fewer particles for cleaner look)
+                if (particles.length > 30) {
+                    particles = particles.slice(-30);
+                }
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Initialize and start animation
+            resizeCanvas(); // Ensure canvas is sized
+            window.addEventListener('resize', resizeCanvas);
+            initCurves();
+            animate();
+            
+            // Pause animation when tab is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    cancelAnimationFrame(animationId);
+                } else {
+                    animate();
+                }
+            });
+        })();
+
+        // SOFR Curve Building Animation
+        (function() {
+            const canvas = document.getElementById('sofrCurveCanvas');
+            if (!canvas) return;
+            
+            const ctx = canvas.getContext('2d');
+            let animationId;
+            
+            // SOFR rate data (maturity in years, rate in %)
+            const sofrData = [
+                { maturity: 0.00274, rate: 4.00, label: 'O/N' }, // Overnight (1 day)
+                { maturity: 0.25, rate: 4.20, label: '3M' },
+                { maturity: 0.33, rate: 4.30, label: '4M' },
+                { maturity: 0.42, rate: 4.35, label: '5M' },
+                { maturity: 0.50, rate: 4.40, label: '6M' },
+                { maturity: 0.58, rate: 4.45, label: '7M' },
+                { maturity: 0.67, rate: 4.50, label: '8M' },
+                { maturity: 2, rate: 4.10, label: '2Y' },
+                { maturity: 3, rate: 4.15, label: '3Y' },
+                { maturity: 4, rate: 4.18, label: '4Y' },
+                { maturity: 5, rate: 4.20, label: '5Y' },
+                { maturity: 7, rate: 4.25, label: '7Y' },
+                { maturity: 10, rate: 4.28, label: '10Y' },
+                { maturity: 15, rate: 4.30, label: '15Y' },
+                { maturity: 20, rate: 4.35, label: '20Y' },
+                { maturity: 25, rate: 4.55, label: '25Y' },
+                { maturity: 30, rate: 4.60, label: '30Y' }
+            ];
+            
+            let builtPoints = [];
+            let currentPointIndex = 0;
+            let buildStartTime = null;
+            let isBuilding = true;
+            let curvePoints = [];
+            let shockPhase = 0;
+            let shockCount = 0;
+            let resetShockThreshold = 250; // Reset after this many shocks
+            let curveTransform = {
+                steepener: 0,      // Steepening/flattening (positive = steepener)
+                twist: 0,          // Curve twist (positive = long end up)
+                parallelShift: 0,  // Parallel shift up/down
+                slopeChange: 0     // Overall slope rotation
+            };
+            let transformPhase = 0;
+            
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+                // Reset building when canvas resizes
+                if (isBuilding) {
+                    builtPoints = [];
+                    currentPointIndex = 0;
+                    buildStartTime = null;
+                }
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            
+            // Convert data to screen coordinates
+            function dataToScreen(maturity, rate) {
+                const padding = { top: 60, right: 80, bottom: 80, left: 80 };
+                const width = canvas.width - padding.left - padding.right;
+                const height = canvas.height - padding.top - padding.bottom;
+                
+                // Map maturity (0-30 years) to x
+                const maxMaturity = 30;
+                const x = padding.left + (maturity / maxMaturity) * width;
+                
+                // Map rate (3.5% - 5.0%) to y (inverted, higher rates = lower y)
+                const minRate = 3.5;
+                const maxRate = 5.0;
+                const y = padding.top + height - ((rate - minRate) / (maxRate - minRate)) * height;
+                
+                return { x, y };
+            }
+            
+            // Draw grid
+            function drawGrid() {
+                const padding = { top: 60, right: 80, bottom: 80, left: 80 };
+                const width = canvas.width - padding.left - padding.right;
+                const height = canvas.height - padding.top - padding.bottom;
+                
+                ctx.strokeStyle = 'rgba(0, 255, 150, 0.08)';
+                ctx.lineWidth = 0.5;
+                
+                // Horizontal lines (rate levels)
+                const minRate = 3.5;
+                const maxRate = 5.0;
+                for (let rate = minRate; rate <= maxRate; rate += 0.25) {
+                    const y = dataToScreen(0, rate).y;
+                    ctx.beginPath();
+                    ctx.moveTo(padding.left, y);
+                    ctx.lineTo(canvas.width - padding.right, y);
+                    ctx.stroke();
+                    
+                    // Rate labels
+                    ctx.fillStyle = 'rgba(0, 255, 150, 0.5)';
+                    ctx.font = '11px monospace';
+                    ctx.textAlign = 'right';
+                    ctx.fillText(rate.toFixed(2) + '%', padding.left - 10, y + 4);
+                }
+                
+                // Vertical lines (maturity)
+                const maxMaturity = 30;
+                for (let year = 0; year <= maxMaturity; year += 5) {
+                    const x = dataToScreen(year, 0).x;
+                    ctx.beginPath();
+                    ctx.moveTo(x, padding.top);
+                    ctx.lineTo(x, canvas.height - padding.bottom);
+                    ctx.stroke();
+                    
+                    // Maturity labels
+                    ctx.fillStyle = 'rgba(0, 255, 150, 0.5)';
+                    ctx.font = '11px monospace';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(year + 'Y', x, canvas.height - padding.bottom + 20);
+                }
+                
+                // Axes
+                ctx.strokeStyle = 'rgba(0, 255, 150, 0.3)';
+                ctx.lineWidth = 1;
+                
+                // X-axis
+                ctx.beginPath();
+                ctx.moveTo(padding.left, canvas.height - padding.bottom);
+                ctx.lineTo(canvas.width - padding.right, canvas.height - padding.bottom);
+                ctx.stroke();
+                
+                // Y-axis
+                ctx.beginPath();
+                ctx.moveTo(padding.left, padding.top);
+                ctx.lineTo(padding.left, canvas.height - padding.bottom);
+                ctx.stroke();
+            }
+            
+            // Build curve point by point
+            function updateBuilding(currentTime) {
+                if (!buildStartTime) {
+                    buildStartTime = currentTime;
+                }
+                
+                const elapsed = (currentTime - buildStartTime) / 1000; // Convert to seconds
+                const pointsToShow = Math.floor(elapsed); // One point per second
+                
+                if (pointsToShow >= sofrData.length) {
+                    // Finished building, switch to stochastic mode
+                    if (isBuilding) {
+                        isBuilding = false;
+                        // Initialize curve points for stochastic shocks
+                        curvePoints = sofrData.map(d => {
+                            const screen = dataToScreen(d.maturity, d.rate);
+                            return {
+                                x: screen.x,
+                                y: screen.y,
+                                baseY: screen.y,
+                                targetY: screen.y, // For smooth resets
+                                vy: 0,
+                                rate: d.rate,
+                                maturity: d.maturity
+                            };
+                        });
+                        // Reset transform state
+                        curveTransform = { steepener: 0, twist: 0, parallelShift: 0, slopeChange: 0 };
+                        shockCount = 0;
+                        transformPhase = 0;
+                    }
+                    return;
+                }
+                
+                // Update built points
+                builtPoints = sofrData.slice(0, pointsToShow + 1).map(d => dataToScreen(d.maturity, d.rate));
+            }
+            
+            // Apply curve transformations
+            function applyCurveTransforms() {
+                transformPhase += 0.005;
+                
+                // Periodically introduce curve transformations (every ~100 shocks)
+                if (shockCount % 1000 === 0 && shockCount > 0) {
+                    const transformType = Math.floor(Math.random() * 4);
+                    const intensity = (Math.random() - 0.5) * 0.5; // -0.25 to 0.25
+                    
+                    switch (transformType) {
+                        case 0: // Steepener/Flattener
+                            curveTransform.steepener = intensity;
+                            break;
+                        case 1: // Twist
+                            curveTransform.twist = intensity;
+                            break;
+                        case 2: // Parallel shift
+                            curveTransform.parallelShift = intensity * 30; // pixels
+                            break;
+                        case 3: // Slope change
+                            curveTransform.slopeChange = intensity * 0.3;
+                            break;
+                    }
+                }
+                
+                // Gradually decay transformations
+                curveTransform.steepener *= 0.98;
+                curveTransform.twist *= 0.98;
+                curveTransform.parallelShift *= 0.98;
+                curveTransform.slopeChange *= 0.98;
+            }
+            
+            // Apply stochastic shocks to curve
+            function updateStochastic() {
+                if (curvePoints.length === 0) return;
+                
+                shockCount++;
+                shockPhase += 0.01;
+                
+                // Reset curve to original after threshold
+                if (shockCount >= resetShockThreshold) {
+                    // Smooth reset over ~50 frames
+                    const resetProgress = Math.min((shockCount - resetShockThreshold) / 50, 1);
+                    
+                    for (let i = 0; i < curvePoints.length; i++) {
+                        const point = curvePoints[i];
+                        point.targetY = point.baseY;
+                        point.y = point.y * (1 - resetProgress * 0.1) + point.targetY * (resetProgress * 0.1);
+                        point.vy *= 0.95; // Dampen velocity
+                    }
+                    
+                    // Reset transformations
+                    curveTransform.steepener *= 0.95;
+                    curveTransform.twist *= 0.95;
+                    curveTransform.parallelShift *= 0.95;
+                    curveTransform.slopeChange *= 0.95;
+                    
+                    // Reset counter after reset is complete
+                    if (resetProgress >= 1) {
+                        shockCount = 0;
+                        curveTransform = { steepener: 0, twist: 0, parallelShift: 0, slopeChange: 0 };
+                        for (let i = 0; i < curvePoints.length; i++) {
+                            curvePoints[i].y = curvePoints[i].baseY;
+                            curvePoints[i].vy = 0;
+                        }
+                    }
+                    
+                    return;
+                }
+                
+                // Apply curve transformations
+                applyCurveTransforms();
+                
+                const maxMaturity = 30;
+                
+                for (let i = 0; i < curvePoints.length; i++) {
+                    const point = curvePoints[i];
+                    const maturity = point.maturity;
+                    const maturityFactor = maturity / maxMaturity; // 0 to 1
+                    
+                    // Base stochastic shock (increased volatility)
+                    const baseShock = (Math.random() - 0.5) * 8; // Increased from 3 to 8
+                    
+                    // Curve transformations
+                    let transformShift = 0;
+                    
+                    // 1. Steepener/Flattener: long end moves more than short end
+                    transformShift += curveTransform.steepener * maturityFactor * 40;
+                    
+                    // 2. Twist: mid-curve moves differently than ends
+                    const twistFactor = Math.sin(maturityFactor * Math.PI); // Peak at mid-curve
+                    transformShift += curveTransform.twist * twistFactor * 30;
+                    
+                    // 3. Parallel shift: all points move together
+                    transformShift += curveTransform.parallelShift;
+                    
+                    // 4. Slope change: rotation around midpoint
+                    const midMaturity = maxMaturity / 2;
+                    transformShift += curveTransform.slopeChange * (maturity - midMaturity) * 2;
+                    
+                    // Mean reversion with transformation target
+                    const targetY = point.baseY + transformShift;
+                    const meanReversion = (targetY - point.y) * 0.08;
+                    
+                    // Correlate with adjacent points for smoother curve
+                    let correlation = 0;
+                    if (i > 0) correlation += (curvePoints[i - 1].y - point.y) * 0.04;
+                    if (i < curvePoints.length - 1) correlation += (curvePoints[i + 1].y - point.y) * 0.04;
+                    
+                    // Increased volatility with maturity-dependent scaling
+                    const maturityVolatility = 0.8 + maturityFactor * 0.4; // Long end more volatile
+                    const shock = baseShock * maturityVolatility;
+                    
+                    // Update velocity (less damping for more movement)
+                    point.vy = point.vy * 0.88 + meanReversion + correlation + shock * 0.15;
+                    point.y += point.vy;
+                }
+            }
+            
+            // Draw curve
+            function drawCurve() {
+                if (isBuilding && builtPoints.length === 0) return;
+                
+                ctx.save();
+                ctx.strokeStyle = '#00ff96';
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.lineJoin = 'round';
+                
+                ctx.beginPath();
+                
+                if (isBuilding) {
+                    // Draw building curve
+                    if (builtPoints.length > 0) {
+                        ctx.moveTo(builtPoints[0].x, builtPoints[0].y);
+                        
+                        // Draw smooth curve
+                        for (let i = 1; i < builtPoints.length; i++) {
+                            const prev = builtPoints[i - 1];
+                            const curr = builtPoints[i];
+                            const cpX = (prev.x + curr.x) / 2;
+                            const cpY = (prev.y + curr.y) / 2;
+                            ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
+                        }
+                        
+                        // Draw to last point
+                        if (builtPoints.length > 1) {
+                            const last = builtPoints[builtPoints.length - 1];
+                            ctx.lineTo(last.x, last.y);
+                        }
+                    }
+                } else {
+                    // Draw stochastic curve
+                    if (curvePoints.length > 0) {
+                        ctx.moveTo(curvePoints[0].x, curvePoints[0].y);
+                        
+                        for (let i = 1; i < curvePoints.length; i++) {
+                            const prev = curvePoints[i - 1];
+                            const curr = curvePoints[i];
+                            const cpX = (prev.x + curr.x) / 2;
+                            const cpY = (prev.y + curr.y) / 2;
+                            ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
+                        }
+                        
+                        const last = curvePoints[curvePoints.length - 1];
+                        ctx.lineTo(last.x, last.y);
+                    }
+                }
+                
+                ctx.stroke();
+                
+                // Draw points
+                ctx.fillStyle = '#00ff96';
+                
+                if (isBuilding) {
+                    builtPoints.forEach((point, i) => {
+                        ctx.beginPath();
+                        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Draw label for last point being built
+                        if (i === builtPoints.length - 1) {
+                            const data = sofrData[i];
+                            if (data && data.label) {
+                                ctx.fillStyle = 'rgba(0, 255, 150, 0.7)';
+                                ctx.font = '10px monospace';
+                                ctx.textAlign = 'center';
+                                ctx.fillText(data.label, point.x, point.y - 12);
+                                ctx.fillStyle = '#00ff96';
+                            }
+                        }
+                    });
+                } else {
+                    curvePoints.forEach((point, i) => {
+                        ctx.beginPath();
+                        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+                        ctx.fill();
+                        
+                        // Draw labels for key maturity points
+                        const data = sofrData[i];
+                        if (data && (data.label === 'O/N' || data.label.includes('Y'))) {
+                            ctx.fillStyle = 'rgba(0, 255, 150, 0.7)';
+                            ctx.font = '10px monospace';
+                            ctx.textAlign = 'center';
+                            ctx.fillText(data.label, point.x, point.y - 12);
+                            ctx.fillStyle = '#00ff96';
+                        }
+                    });
+                }
+                
+                ctx.restore();
+            }
+            
+            // Animation loop
+            function animate(currentTime) {
+                ctx.fillStyle = 'rgba(3, 7, 18, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                drawGrid();
+                
+                if (isBuilding) {
+                    updateBuilding(currentTime);
+                } else {
+                    updateStochastic();
+                }
+                
+                drawCurve();
+                
+                animationId = requestAnimationFrame(animate);
+            }
+            
+            // Start animation
+            animationId = requestAnimationFrame(animate);
+            
+            // Pause when tab is hidden
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    cancelAnimationFrame(animationId);
+                } else {
+                    animationId = requestAnimationFrame(animate);
+                }
+            });
+        })();
+
         // Simple smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
