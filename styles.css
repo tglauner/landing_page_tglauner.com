@@ -115,6 +115,9 @@ body {
 
 .animations-container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
     width: 100%;
     min-height: 70vh;
     height: 70vh;
@@ -124,6 +127,8 @@ body {
 .animation-panel {
     position: relative;
     width: 50%;
+    flex: 1 1 50%;
+    min-width: 0;
     height: 100%;
     overflow: hidden;
     background: #030712;
@@ -875,7 +880,7 @@ section.content-section:nth-of-type(odd) {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .animations-container {
         flex-direction: column;
         height: auto;
@@ -896,6 +901,9 @@ section.content-section:nth-of-type(odd) {
         border-left: none;
         border-top: 1px solid #1f2937;
     }
+}
+
+@media (max-width: 768px) {
 
     .hero-overlay-content .animation-title {
         font-size: 1.5rem;
