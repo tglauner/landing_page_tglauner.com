@@ -1,1 +1,3 @@
+User-agent: *
+Allow: /
 Sitemap: https://tglauner.com/sitemap.xml
