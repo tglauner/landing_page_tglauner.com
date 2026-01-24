@@ -162,6 +162,8 @@
                 <a href="#apps" class="nav-link">Apps</a>
                 <a href="#prototypes" class="nav-link">Prototypes</a>
                 <a href="#about" class="nav-link">About</a>
+                <a href="#github" class="nav-link nav-button">Github</a>
+                <a href="#mcp" class="nav-link nav-button">MCP</a>
             </div>
         </div>
     </nav>
@@ -456,6 +458,63 @@
                         <div class="feature-icon">🧮</div>
                         <h3>Quantitative Focus</h3>
                         <p>Advanced mathematical modeling and programming expertise with Python, Excel, and industry tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Github Section -->
+    <section id="github" class="github-section content-section" data-github-user="tglauner">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Open Source</p>
+                <h2>Github Repositories</h2>
+                <p>Public repositories and descriptions pulled live from Github.</p>
+            </div>
+
+            <div class="github-profile">
+                <div class="github-handle" id="github-handle">github.com/tglauner</div>
+                <a id="github-profile-link" href="https://github.com/tglauner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Github</a>
+            </div>
+
+            <p id="github-status" class="github-status">Loading repositories...</p>
+            <div id="github-repo-grid" class="github-grid" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <!-- MCP Section -->
+    <section id="mcp" class="mcp-section content-section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-eyebrow">Model Context Protocol</p>
+                <span class="mcp-status">Under construction</span>
+                <h2>Public MCP Server</h2>
+                <p>Currently in active development. The public MCP server exposes Tim Glauner's profile as a tool and resource for MCP-enabled assistants and apps.</p>
+            </div>
+
+            <div class="mcp-grid">
+                <div class="mcp-card">
+                    <h3>What it is</h3>
+                    <p>Streamable HTTP MCP endpoint with read-only profile data for quick, structured context.</p>
+                    <ul class="mcp-list">
+                        <li><span class="mcp-label">Tool:</span> <code>profile</code> returns a summary plus JSON.</li>
+                        <li><span class="mcp-label">Resource:</span> <code>profile.json</code> returns Schema.org Person data.</li>
+                        <li><span class="mcp-label">Transport:</span> Streamable HTTP at <code>/mcp</code>.</li>
+                    </ul>
+                </div>
+
+                <div class="mcp-card">
+                    <h3>How to connect</h3>
+                    <p>Point any MCP client at the endpoint below. For a quick test, use the MCP Inspector.</p>
+                    <div class="mcp-endpoint">
+                        <span class="endpoint-label">Endpoint</span>
+                        <code>https://mcp.tglauner.com/mcp</code>
+                    </div>
+                    <pre class="code-block"><code>npx -y @modelcontextprotocol/inspector https://mcp.tglauner.com/mcp</code></pre>
+                    <div class="mcp-actions">
+                        <a href="https://mcp.tglauner.com/mcp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open MCP Endpoint</a>
+                        <a href="https://github.com/tglauner/mcp.tglauner.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub</a>
                     </div>
                 </div>
             </div>
@@ -1191,6 +1250,122 @@
             }
         }
         fetchTickers();
+
+        async function fetchGithubRepos() {
+            const section = document.getElementById('github');
+            if (!section) return;
+
+            const username = section.getAttribute('data-github-user');
+            const repoGrid = document.getElementById('github-repo-grid');
+            const status = document.getElementById('github-status');
+            const handle = document.getElementById('github-handle');
+            const profileLink = document.getElementById('github-profile-link');
+
+            if (!username) {
+                if (status) {
+                    status.textContent = 'Github username not configured.';
+                }
+                return;
+            }
+
+            const profileUrl = `https://github.com/${username}`;
+            if (handle) {
+                handle.textContent = profileUrl.replace('https://', '');
+            }
+            if (profileLink) {
+                profileLink.href = profileUrl;
+            }
+
+            const repos = [];
+            let page = 1;
+            const perPage = 100;
+
+            try {
+                while (true) {
+                    const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}&sort=updated`);
+                    if (!response.ok) {
+                        throw new Error(`Github API error: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    repos.push(...data);
+                    if (data.length < perPage) {
+                        break;
+                    }
+                    page += 1;
+                }
+            } catch (err) {
+                console.error('Error fetching Github repositories', err);
+                if (status) {
+                    status.textContent = 'Unable to load Github repositories right now.';
+                }
+                return;
+            }
+
+            if (repoGrid) {
+                repoGrid.innerHTML = '';
+            }
+
+            if (!repos.length) {
+                if (status) {
+                    status.textContent = 'No repositories found.';
+                }
+                return;
+            }
+
+            const fragment = document.createDocumentFragment();
+
+            repos.forEach((repo) => {
+                const card = document.createElement('article');
+                card.className = 'github-card';
+
+                const title = document.createElement('h3');
+                const link = document.createElement('a');
+                link.href = repo.html_url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = repo.name;
+                title.appendChild(link);
+
+                const description = document.createElement('p');
+                description.textContent = repo.description ? repo.description : 'No description provided.';
+
+                const meta = document.createElement('div');
+                meta.className = 'github-meta';
+
+                if (repo.language) {
+                    const language = document.createElement('span');
+                    language.textContent = repo.language;
+                    meta.appendChild(language);
+                }
+
+                const updated = document.createElement('span');
+                if (repo.updated_at) {
+                    const updatedDate = new Date(repo.updated_at);
+                    if (!Number.isNaN(updatedDate.getTime())) {
+                        updated.textContent = `Updated ${updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`;
+                    } else {
+                        updated.textContent = 'Updated date unavailable';
+                    }
+                } else {
+                    updated.textContent = 'Updated date unavailable';
+                }
+                meta.appendChild(updated);
+
+                card.appendChild(title);
+                card.appendChild(description);
+                card.appendChild(meta);
+
+                fragment.appendChild(card);
+            });
+
+            if (repoGrid) {
+                repoGrid.appendChild(fragment);
+            }
+            if (status) {
+                status.textContent = `Showing ${repos.length} public repositories.`;
+            }
+        }
+        fetchGithubRepos();
     </script>
 </body>
 </html>
