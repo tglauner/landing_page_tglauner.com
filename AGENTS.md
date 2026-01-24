@@ -118,15 +118,12 @@ drwxr-xr-x  5 root     root         4096 Jan 13 13:35  ./frtb_fundamentals
 -rw-r--r--  1 root     root     10328147 Jul 10  2025  ./frtb_fundamentals/Archive.zip
 -rw-r--r--  1 root     root       164855 Jul 10  2025 './frtb_fundamentals/File-Based Analytics Tracking Documentation.pdf'
 -rw-r--r--  1 root     root          112 Jul 10  2025  ./frtb_fundamentals/README.md
--rw-r--r--  1 root     root        12535 Jul 10  2025  ./frtb_fundamentals/analytics.js
--rw-r--r--  1 root     root         6079 Jul 10  2025  ./frtb_fundamentals/analytics_data.json
 -rw-r--r--  1 root     root         3550 Dec 11 10:34  ./frtb_fundamentals/calc_frtb_sa_charge_for_1_swap.py
 -rw-r--r--  1 root     root         3504 Jan 13 13:35  ./frtb_fundamentals/content_outline.md
 -rw-r--r--  1 root     root        10134 Jul 10  2025  ./frtb_fundamentals/cookie-consent.js
 -rw-r--r--  1 root     root        12182 Jul 27 00:41  ./frtb_fundamentals/cookie-policy.html
 -rw-r--r--  1 root     root         5118 Jul 10  2025  ./frtb_fundamentals/cookie-styles.css
 -rw-r--r--  1 root     root         3440 Jan 13 13:35  ./frtb_fundamentals/documentation.md
--rw-r--r--  1 root     root         5211 Jul 10  2025  ./frtb_fundamentals/file_based_analytics_documentation.md
 -rw-r--r--  1 root     root         2179 Jul 10  2025  ./frtb_fundamentals/footer.html
 -rw-r--r--  1 root     root          376 Jul 10  2025  ./frtb_fundamentals/footer.js
 -rw-r--r--  1 root     root         4458 Jan 13 13:35  ./frtb_fundamentals/geo-redirect.js
@@ -148,21 +145,17 @@ drwxr-xr-x  2 root     root         4096 Jul 27 00:41  ./frtb_fundamentals/image
 -rw-r--r--  1 root     root        16666 Jul 10  2025  ./frtb_fundamentals/styles.css
 -rw-r--r--  1 root     root        13845 Jul 10  2025  ./frtb_fundamentals/terms-of-service.html
 -rw-r--r--  1 root     root         1174 Jul 10  2025  ./frtb_fundamentals/todo.md
--rw-r--r--  1 root     root         6039 Jul 10  2025  ./frtb_fundamentals/track.php
 -rw-r--r--  1 root     root        29734 Jan 13 13:34  ./golden_selling.html
 -rw-r--r--  1 root     root        49552 Jan 13 23:41  ./index.html
 drwxrwxr-x  5 root     www-data     4096 Jan 13 13:35  ./mastering_interest_rate_derivatives
 -rw-r--r--  1 root     root           58 Jul 25 01:57  ./mastering_interest_rate_derivatives/.gitignore
 -rw-rw-r--  1 root     www-data   164855 Jul 25 01:57 './mastering_interest_rate_derivatives/File-Based Analytics Tracking Documentation.pdf'
 -rw-rw-r--  1 root     www-data      112 Jul 25 01:57  ./mastering_interest_rate_derivatives/README.md
--rw-r--r--  1 root     root        12535 Jul 25 01:57  ./mastering_interest_rate_derivatives/analytics.js
--rw-r--r--  1 www-data www-data    81107 Jan 13 23:33  ./mastering_interest_rate_derivatives/analytics_data.json
 -rw-r--r--  1 root     root         3504 Jan 13 13:35  ./mastering_interest_rate_derivatives/content_outline.md
 -rw-rw-r--  1 root     www-data    11265 Jul 25 01:57  ./mastering_interest_rate_derivatives/cookie-consent.js
 -rw-r--r--  1 root     root        12432 Jul 25 01:57  ./mastering_interest_rate_derivatives/cookie-policy.html
 -rw-rw-r--  1 root     www-data     5427 Jul 25 01:57  ./mastering_interest_rate_derivatives/cookie-styles.css
 -rw-r--r--  1 root     root         3440 Jan 13 13:35  ./mastering_interest_rate_derivatives/documentation.md
--rw-r--r--  1 root     root         5211 Jul 25 01:57  ./mastering_interest_rate_derivatives/file_based_analytics_documentation.md
 -rw-r--r--  1 root     root         2174 Jul 25 01:57  ./mastering_interest_rate_derivatives/footer.html
 -rw-r--r--  1 root     root          378 Jul 25 01:57  ./mastering_interest_rate_derivatives/footer.js
 -rw-r--r--  1 root     root         4459 Jan 13 13:35  ./mastering_interest_rate_derivatives/geo-redirect.js
@@ -180,12 +173,8 @@ drwxrwxr-x  2 root     www-data     4096 Jul 25 01:59  ./mastering_interest_rate
 -rw-r--r--  1 root     root        16473 Jul 25 01:57  ./mastering_interest_rate_derivatives/styles.css
 -rw-r--r--  1 root     root        13845 Jul 25 01:57  ./mastering_interest_rate_derivatives/terms-of-service.html
 -rw-rw-r--  1 root     www-data     1174 Jul 25 01:57  ./mastering_interest_rate_derivatives/todo.md
--rw-r--r--  1 root     root         6039 Jul 25 01:57  ./mastering_interest_rate_derivatives/track.php
 drwxrwxr-x  4 root     www-data     4096 Jan 13 13:36  ./mastering_mbs_and_abs
 -rw-rw-r--  1 root     www-data       39 Jun 10  2025  ./mastering_mbs_and_abs/.gitignore
--rw-rw-r--  1 root     www-data    10189 Jun  8  2025  ./mastering_mbs_and_abs/analytics.js
--rwxrwxrwx  1 root     root       221845 Jan 16 17:18  ./mastering_mbs_and_abs/analytics_data.json
--rw-r--r--  1 www-data www-data       46 Oct 10 20:10  ./mastering_mbs_and_abs/analytics_errors.log
 -rw-rw-r--  1 root     www-data    11189 Jun  8  2025  ./mastering_mbs_and_abs/cookie-consent.js
 -rw-r--r--  1 root     root        12163 Jun 15  2025  ./mastering_mbs_and_abs/cookie-policy.html
 -rw-rw-r--  1 root     www-data     4806 Jun  8  2025  ./mastering_mbs_and_abs/cookie-styles.css
@@ -205,7 +194,6 @@ drwxrwxr-x  2 root     www-data     4096 Jun 15  2025  ./mastering_mbs_and_abs/i
 -rw-rw-r--  1 root     www-data     3740 Jun  8  2025  ./mastering_mbs_and_abs/script.js
 -rw-r--r--  1 root     root        13966 Jun 15  2025  ./mastering_mbs_and_abs/styles.css
 -rw-r--r--  1 root     root        14000 Jun 17  2025  ./mastering_mbs_and_abs/terms-of-service.html
--rw-rw-r--  1 root     www-data     4359 Jun  8  2025  ./mastering_mbs_and_abs/track.php
 drwxr-xr-x  6 root     root         4096 Jan 12 01:56  ./mcp.tglauner.com
 -rw-r--r--  1 root     root         4771 Jan 12 01:37  ./mcp.tglauner.com/.gitignore
 drwxr-xr-x  2 root     root         4096 Jan 12 01:37  ./mcp.tglauner.com/.vscode
@@ -260,13 +248,10 @@ drwxr-xr-x  6 root     root         4096 Sep 13 10:29  ./multi_model_talkshow/fr
 -rw-r--r--  1 root     root          414 Aug 30 19:42  ./multi_model_talkshow/frontend/vite.config.js
 -rw-r--r--  1 root     root          187 Sep 13 10:29  ./multi_model_talkshow/requirements.txt
 -rw-r--r--  1 root     root           42 Aug  2 11:49  ./robots.txt
--rwxr-xr-x  1 root     root         3752 Jun 30  2025  ./send_daily_analytics.sh
 -rw-r--r--  1 root     root          782 Aug 30 23:02  ./sitemap.xml
 -rw-r--r--  1 root     root        17540 Jan 13 23:41  ./styles.css
 drwxrwxr-x  2 root     www-data     4096 May 29  2025  ./tracking
 -rw-rw-r--  1 root     www-data     2188 May 29  2025  ./tracking/classify_opens.py
--rw-rw-r--  1 root     www-data      323 May 23  2025  ./tracking/log.php
--rw-rw-r--  1 root     www-data    60214 Jun 11  2025  ./tracking/opens.csv
 -rw-rw-r--  1 root     www-data      106 May 22  2025  ./tracking/pixel_1x1.png
 drwxr-xr-x 11 root     root         4096 Sep 24 05:14  ./visitor_analytics
 -rw-r--r--  1 root     root          445 Aug 17 08:16  ./visitor_analytics/.gitignore
