@@ -529,6 +529,8 @@ section.content-section:nth-of-type(odd) {
     overflow: hidden;
     transition: all 0.3s ease;
     border: 1px solid #374151;
+    position: relative;
+    cursor: pointer;
 }
 
 .course-card:hover {
@@ -563,16 +565,38 @@ section.content-section:nth-of-type(odd) {
     background: linear-gradient(135deg, rgba(37, 99, 235, 0.6), rgba(168, 85, 247, 0.6));
 }
 
-.discount-badge {
+.course-badge-row {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 3;
+    flex-wrap: wrap;
+}
+
+.discount-badge {
     background: #dc2626;
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 0.9rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.02em;
+}
+
+.course-card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: 12px;
+    display: block;
+}
+
+.course-card-link:focus-visible {
+    outline: 2px solid #60a5fa;
+    outline-offset: 2px;
 }
 
 .course-content {
@@ -685,11 +709,19 @@ section.content-section:nth-of-type(odd) {
     gap: 1rem;
     justify-content: center;
     width: 100%;
+    position: relative;
+    z-index: 3;
 }
 
 .course-actions .btn {
     min-width: 180px;
     text-align: center;
+}
+
+.btn-mini {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    border-radius: 999px;
 }
 
 
