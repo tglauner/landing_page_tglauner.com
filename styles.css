@@ -9,6 +9,7 @@
     --ticker-height: 32px;
     --navbar-height: 72px;
     --header-offset: calc(var(--ticker-height) + var(--navbar-height));
+    --scroll-extra: 4vh;
 }
 
 @media (max-width: 768px) {
@@ -18,7 +19,7 @@
 }
 
 html {
-    scroll-padding-top: var(--header-offset);
+    scroll-padding-top: 0;
 }
 
 body {
@@ -88,31 +89,51 @@ body {
 
 .nav-menu {
     display: flex;
-    gap: 2rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-link {
-    color: #d1d5db;
+    color: #e5e7eb;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    padding: 0.35rem 0.95rem;
+    border-radius: 999px;
+    border: 1px solid #374151;
+    background: rgba(15, 23, 42, 0.7);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #60a5fa;
-    background-color: rgba(96, 165, 250, 0.1);
+    color: #f8fafc;
+    border-color: #60a5fa;
+    background-color: rgba(96, 165, 250, 0.15);
+    transform: translateY(-1px);
+}
+
+.nav-link.nav-primary {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(96, 165, 250, 0.95));
+    border-color: #60a5fa;
+    color: #f8fafc;
+    box-shadow: 0 12px 22px rgba(37, 99, 235, 0.35);
+}
+
+.nav-link.nav-primary:hover {
+    background: linear-gradient(135deg, rgba(29, 78, 216, 0.98), rgba(59, 130, 246, 0.98));
+    color: #ffffff;
 }
 
 .nav-link.nav-button {
-    border: 1px solid #3b82f6;
-    color: #bfdbfe;
-    font-weight: 600;
-    background: rgba(59, 130, 246, 0.12);
+    border-color: #60a5fa;
+    color: #e0f2fe;
+    background: rgba(59, 130, 246, 0.18);
 }
 
 .nav-link.nav-button:hover {
-    background: #2563eb;
+    background: rgba(37, 99, 235, 0.55);
     color: #ffffff;
 }
 
@@ -492,6 +513,14 @@ section.content-section:nth-of-type(odd) {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+}
+
+.scroll-offset-tight {
+    scroll-margin-top: calc(var(--header-offset) - var(--scroll-extra));
+}
+
+.scroll-offset-safe {
+    scroll-margin-top: calc(var(--header-offset) + 1.5rem);
 }
 
 .course-card {
@@ -874,29 +903,38 @@ section.content-section:nth-of-type(odd) {
 }
 
 .github-card {
-    background: #0f172a;
-    border: 1px solid #1f2937;
-    border-radius: 12px;
-    padding: 1.5rem;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 1.6rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     transition: all 0.3s ease;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
 }
 
 .github-card:hover {
     border-color: #60a5fa;
     transform: translateY(-4px);
+    box-shadow: 0 24px 40px rgba(15, 23, 42, 0.45);
 }
 
 .github-card h3 {
     font-size: 1.1rem;
     font-weight: 700;
+    line-height: 1.3;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .github-card a {
     color: #93c5fd;
     text-decoration: none;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .github-card a:hover {

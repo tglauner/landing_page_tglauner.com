@@ -158,12 +158,13 @@
         <div class="nav-container">
             <a href="https://tglauner.com/" class="nav-logo">TG Investments & Research</a>
             <div class="nav-menu">
-                <a href="#courses" class="nav-link">Courses</a>
+                <a href="#course-list" class="nav-link nav-primary">Courses</a>
+                <a href="#mcp" class="nav-link">MCP</a>
+                <a href="#prototypes" class="nav-link">XVA Portal</a>
+                <a href="#animations" class="nav-link">Animations</a>
                 <a href="#apps" class="nav-link">Apps</a>
-                <a href="#prototypes" class="nav-link">Prototypes</a>
+                <a href="#github" class="nav-link">Github</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="#github" class="nav-link nav-button">Github</a>
-                <a href="#mcp" class="nav-link nav-button">MCP</a>
             </div>
         </div>
     </nav>
@@ -177,7 +178,7 @@
                 <p>Enroll instantly on Udemy or dive deeper on our dedicated landing pages. Courses cover FRTB, interest rate derivatives, MBS/ABS, and XVA with practical examples from 30+ years of capital markets experience.</p>
             </div>
 
-            <div class="courses-grid">
+            <div class="courses-grid scroll-offset-safe" id="course-list">
                 <!-- Course 1: Interest Rate Derivatives -->
                 <div class="course-card">
                     <div class="course-image">
@@ -302,45 +303,12 @@
                     </div>
                 </div>
 
-                <!-- Course 4: XVA Essentials -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="assets/hero-bg.jpg" alt="XVA Essentials in Financial Markets">
-                        <div class="course-overlay"></div>
-                        <span class="discount-badge">Free Access</span>
-                    </div>
-                    <div class="course-content">
-                        <h3>XVA Essentials in Financial Markets</h3>
-                        <p class="course-subtitle">CVA, DVA, FVA, MVA, KVA Explained</p>
-                        <p class="course-description">Graduate-level overview of valuation adjustments, funding costs, and capital impacts with interactive modules and glossary support.</p>
-
-                        <div class="course-rating">
-                            <span class="rating-text">Graduate level</span>
-                            <span class="students">Interactive modules</span>
-                        </div>
-
-                        <ul class="course-features">
-                            <li>CVA and DVA fundamentals</li>
-                            <li>FVA and funding implications</li>
-                            <li>MVA and initial margin costs</li>
-                            <li>KVA and capital allocation</li>
-                            <li>Pricing adjustments in practice</li>
-                        </ul>
-
-                        <div class="course-footer">
-                            <div class="course-actions">
-                                <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Launch XVA Essentials</a>
-                                <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Overview</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Animations Section - Side by Side -->
-    <section class="animations-section">
+    <section id="animations" class="animations-section scroll-offset-tight">
         <div class="animations-container">
             <!-- Left Animation - Stochastic Curves -->
             <div class="animation-panel animation-left">
@@ -1305,7 +1273,9 @@
                 repoGrid.innerHTML = '';
             }
 
-            if (!repos.length) {
+            const publicRepos = repos.filter((repo) => !repo.private && repo.visibility !== 'private');
+
+            if (!publicRepos.length) {
                 if (status) {
                     status.textContent = 'No repositories found.';
                 }
@@ -1314,7 +1284,7 @@
 
             const fragment = document.createDocumentFragment();
 
-            repos.forEach((repo) => {
+            publicRepos.forEach((repo) => {
                 const card = document.createElement('article');
                 card.className = 'github-card';
 
@@ -1362,7 +1332,7 @@
                 repoGrid.appendChild(fragment);
             }
             if (status) {
-                status.textContent = `Showing ${repos.length} public repositories.`;
+                status.textContent = `Showing ${publicRepos.length} public repositories.`;
             }
         }
         fetchGithubRepos();
