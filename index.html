@@ -22,8 +22,8 @@
     <meta name="twitter:description" content="Professional finance training in FRTB, interest rate derivatives, MBS/ABS, and XVA led by Tim Glauner with 30+ years in capital markets.">
     <meta name="twitter:image" content="https://tglauner.com/assets/hero-bg.jpg">
     <meta name="twitter:image:alt" content="Trading floor background for TG Investments and Research">
-    <link rel="stylesheet" href="styles.css?v=20260424">
     <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css?v=20260730">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -77,7 +77,7 @@
                                 "name": "Mastering Interest Rate Derivatives",
                                 "description": "Swaps, curves, caps, floors, and swaptions with end-to-end trading floor workflows.",
                                 "url": "https://tglauner.com/mastering_interest_rate_derivatives/",
-                                "image": "https://tglauner.com/assets/derivatives-course.jpg",
+                                "image": "https://tglauner.com/assets/ird-ficc-trading-floor.png",
                                 "inLanguage": "en",
                                 "provider": {
                                     "@id": "https://tglauner.com/#organization"
@@ -95,7 +95,7 @@
                                 "name": "Mastering Mortgage and Asset Backed Securities",
                                 "description": "Securitization, prepayment models, CMOs, OAS, and analytics with professional tools.",
                                 "url": "https://tglauner.com/mastering_mbs_and_abs/",
-                                "image": "https://tglauner.com/assets/mbs-course.jpg",
+                                "image": "https://tglauner.com/assets/mbs-multi-screens.png",
                                 "inLanguage": "en",
                                 "provider": {
                                     "@id": "https://tglauner.com/#organization"
@@ -113,7 +113,7 @@
                                 "name": "Fundamental Review of the Trading Book",
                                 "description": "FRTB framework coverage across standardized and internal models with practical examples.",
                                 "url": "https://tglauner.com/frtb_fundamentals/",
-                                "image": "https://tglauner.com/assets/frtb-course.jpg",
+                                "image": "https://tglauner.com/assets/frtb-skyline.jpg",
                                 "inLanguage": "en",
                                 "provider": {
                                     "@id": "https://tglauner.com/#organization"
@@ -148,1343 +148,314 @@
     </script>
 </head>
 <body>
-    <div class="ticker-bar">
-        <div class="ticker-item">BTC: <span id="btc-price">--</span></div>
-        <div class="ticker-item">S&amp;P 500 Today: <span id="sp500-price">--</span></div>
-        <div class="ticker-item">ETH: <span id="eth-price">--</span></div>
-    </div>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="https://tglauner.com/" class="nav-logo">TG Investments & Research</a>
-            <div class="nav-menu">
-                <a href="#course-list" class="nav-link nav-primary">Courses</a>
-                <a href="#prototypes" class="nav-link">XVA Course</a>
-                <a href="#systems" class="nav-link">Systems</a>
-                <a href="#mcp" class="nav-link">MCP</a>
-                <a href="#github" class="nav-link">GitHub</a>
-                <a href="#about" class="nav-link">About</a>
-            </div>
-        </div>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses-section content-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-eyebrow">Start Learning Today</p>
-                <h1>TG Investments and Research Finance Courses</h1>
-                <p>Enroll instantly on Udemy or dive deeper on our dedicated landing pages. Courses cover FRTB, interest rate derivatives, MBS/ABS, and XVA with practical examples from 30+ years of capital markets experience.</p>
+    <header class="site-header" aria-label="Primary">
+        <a class="brand-lockup" href="#top" aria-label="TG Investments and Research home">
+            <img class="brand-icon" src="assets/favicon.png" alt="" aria-hidden="true">
+            <span class="brand-name">TG Investments and Research</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+            <a href="#courses">Courses</a>
+            <a href="#systems">Systems</a>
+            <a href="#mcp">MCP</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="top" class="hero-section" aria-label="TG Investments and Research overview">
+            <img class="hero-image" src="assets/hero-bg.jpg" alt="Trading desk screens and market workspace">
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
 
-            <div class="courses-grid scroll-offset-safe" id="course-list">
-                <!-- Course 1: Interest Rate Derivatives -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="assets/derivatives-course.jpg" alt="Mastering Interest Rate Derivatives">
-                        <div class="course-overlay"></div>
-                        <div class="course-badge-row">
-                            <span class="discount-badge">25% OFF</span>
-                            <a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_APR_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-mini">Sign Up on Udemy</a>
-                        </div>
-                    </div>
-                    <a href="https://tglauner.com/mastering_interest_rate_derivatives/" class="course-card-link" aria-label="View Mastering Interest Rate Derivatives landing page"></a>
-                    <div class="course-content">
+            <div class="hero-copy reveal-on-load">
+                <p class="kicker">Advanced rates, XVA, and structured products</p>
+                <h1>TG Investments and Research</h1>
+                <p class="hero-lede">Quantitative finance courses and working tools for people operating close to the front office: SOFR curves, swaptions, callable structures, XVA, securitized cashflows, and market risk capital.</p>
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a class="text-action text-action-strong" href="#courses">View courses <span aria-hidden="true">-&gt;</span></a>
+                    <a class="text-action" href="#systems">Open systems <span aria-hidden="true">-&gt;</span></a>
+                </div>
+            </div>
+
+            <aside class="desk-strip reveal-on-load" aria-label="Experience summary">
+                <div>
+                    <span class="desk-number">30+</span>
+                    <span class="desk-label">Years in capital markets</span>
+                </div>
+                <div>
+                    <span class="desk-number">NY-LON-PAR</span>
+                    <span class="desk-label">Trading and risk perspective</span>
+                </div>
+                <div>
+                    <span class="desk-number">SOFR / Swaptions / XVA</span>
+                    <span class="desk-label">Built for demanding quant and trading conversations</span>
+                </div>
+            </aside>
+        </section>
+
+        <section class="quant-lab-section" aria-label="Quant rates animation lab">
+            <div class="quant-lab-copy reveal">
+                <p class="kicker">Quant rates lab</p>
+                <h2>Stochastic rates, callable boundaries, and XVA exposure in motion.</h2>
+                <p>The animation uses a Hull-White style short-rate process to show mean-reverting paths, a callable exercise zone, and exposure tails. It is intentionally visual: not a pricing engine, but a fast signal that the course material sits in real quant rates territory.</p>
+                <div class="lab-controls" aria-label="Animation mode">
+                    <button class="lab-mode is-active" type="button" data-lab-mode="rates" aria-pressed="true">Rates fan</button>
+                    <button class="lab-mode" type="button" data-lab-mode="callable" aria-pressed="false">Callable</button>
+                    <button class="lab-mode" type="button" data-lab-mode="xva" aria-pressed="false">XVA</button>
+                </div>
+            </div>
+            <div class="quant-lab-panel reveal">
+                <canvas id="rates-lab-canvas" width="1200" height="720" aria-label="Animated stochastic rates visualization"></canvas>
+                <div class="lab-readout" aria-hidden="true">
+                    <span id="lab-model">Hull-White 1F</span>
+                    <span id="lab-a">a 0.10</span>
+                    <span id="lab-sigma">sigma 1.15%</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section course-deck">
+            <div class="section-intro">
+                <p class="kicker">Course desk</p>
+                <h2>Specialist programs for serious finance practitioners.</h2>
+                <p>Each course is built around the instruments, controls, and language used by unusually demanding market professionals: curve construction, calibration, optionality, securitization cashflows, market risk capital, and valuation adjustments.</p>
+            </div>
+
+            <div class="course-stack">
+                <article class="course-row reveal">
+                    <a class="course-media" href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer" aria-label="Open Mastering Interest Rate Derivatives">
+                        <img src="assets/ird-ficc-trading-floor.png" alt="Interest Rate Derivatives trading floor course image">
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">IRD-01</p>
                         <h3>Mastering Interest Rate Derivatives</h3>
-                        <p class="course-subtitle">The Definitive Course for Finance Professionals</p>
-                        <p class="course-description">Comprehensive training on swaps, curves, caps, floors, and swaptions from industry experts with real-world trading floor experience.</p>
-                        
-                        <div class="course-rating">
-                            <div class="stars">
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star three-quarter">★</span>
-                                <!-- <span class="star half">★</span> -->
-                            </div>
-                            <span class="rating-text">4.8/5</span>
-                            <span class="students">25+ finance professionals</span>
-                        </div>
-                        
-                        <ul class="course-features">
-                            <li>End-to-end swap pricing workflow</li>
-                            <li>Interest rate curve building</li>
-                            <li>Cap, floor & swaption pricing</li>
-                            <li>Wall Street expertise</li>
-                            <li>Practical trading applications</li>
+                        <p>A rates desk curriculum connecting SOFR curve construction, swaps, convexity, caps, floors, swaptions, calibration, and risk sensitivities.</p>
+                        <ul>
+                            <li>Curve building, discounting, and forward projection</li>
+                            <li>Swap valuation, Greeks, and trading floor applications</li>
+                            <li>Option pricing intuition for caps, floors, and swaptions</li>
                         </ul>
-                        
-                        <div class="course-footer">
-                            <div class="course-actions">
-                                <a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
-                            </div>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/" target="_blank" rel="noopener noreferrer">Enroll on Udemy</a>
+                            <a class="line-link" href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- Course 2: MBS and ABS -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="assets/mbs-course.jpg" alt="Mastering MBS and ABS">
-                        <div class="course-overlay"></div>
-                        <div class="course-badge-row">
-                            <span class="discount-badge">25% OFF</span>
-                            <a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_APR_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-mini">Sign Up on Udemy</a>
-                        </div>
-                    </div>
-                    <a href="https://tglauner.com/mastering_mbs_and_abs/" class="course-card-link" aria-label="View Mastering Mortgage and Asset Backed Securities landing page"></a>
-                    <div class="course-content">
+                <article class="course-row course-row-offset reveal">
+                    <a class="course-media" href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer" aria-label="Open Mastering Mortgage and Asset Backed Securities">
+                        <img src="assets/mbs-multi-screens.png" alt="MBS and ABS trading screens course image">
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">SEC-02</p>
                         <h3>Mastering Mortgage and Asset Backed Securities</h3>
-                        <p class="course-subtitle">From the Basics to Advanced Analytics and 3rd Party Tools</p>
-                        <p class="course-description">From fundamentals to advanced concepts in securitizing, trading, and investing in mortgage and asset-backed securities.</p>
-                        
-                        <div class="course-rating">
-                            <div class="stars">
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                            </div>
-                            <span class="rating-text">5/5</span>
-                            <span class="students">20+ finance professionals</span>
-                        </div>
-                        
-                        <ul class="course-features">
-                            <li>Securitization mechanics</li>
-                            <li>Prepayment & waterfall models</li>
-                            <li>Intex analytics platform</li>
-                            <li>Python cashflow calculations</li>
-                            <li>Advanced risk analysis</li>
+                        <p>Securitization, prepayments, waterfalls, OAS, and analytics for structured product professionals.</p>
+                        <ul>
+                            <li>Cashflow and waterfall mechanics</li>
+                            <li>Prepayment and OAS intuition</li>
+                            <li>Intex and Python context</li>
                         </ul>
-                        
-                        <div class="course-footer">
-                            <div class="course-actions">
-                                <a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
-                            </div>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/" target="_blank" rel="noopener noreferrer">Enroll on Udemy</a>
+                            <a class="line-link" href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <!-- Course 3: FRTB Fundamentals -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <img src="assets/frtb-course.jpg" alt="FRTB Fundamentals">
-                        <div class="course-overlay"></div>
-                        <div class="course-badge-row">
-                            <span class="discount-badge">25% OFF</span>
-                            <a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_APR_2026" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-mini">Sign Up on Udemy</a>
-                        </div>
-                    </div>
-                    <a href="https://tglauner.com/frtb_fundamentals/" class="course-card-link" aria-label="View Fundamental Review of the Trading Book landing page"></a>
-                    <div class="course-content">
+                <article class="course-row reveal">
+                    <a class="course-media" href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer" aria-label="Open Fundamental Review of the Trading Book">
+                        <img src="assets/frtb-skyline.jpg" alt="Financial district skyline FRTB course image">
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">RISK-03</p>
                         <h3>Fundamental Review of the Trading Book</h3>
-                        <p class="course-subtitle">Comprehensive Training for Banking Professionals</p>
-                        <p class="course-description">Master the Fundamental Review of the Trading Book with expert guidance on market risk capital rules, standardized approach, and internal models.</p>
-                        
-                        <div class="course-rating">
-                            <div class="stars">
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star filled">★</span>
-                                <span class="star">★</span>
-                            </div>
-                            <span class="rating-text">4/5</span>
-                            <span class="students">30+ banking professionals</span>
-                        </div>
-                        
-                        <ul class="course-features">
+                        <p>Market risk capital training covering the standardized approach, internal models, sensitivities, and practical examples.</p>
+                        <ul>
                             <li>Basel III market risk framework</li>
-                            <li>SA and IMA approaches</li>
-                            <li>Excel examples & Python code</li>
-                            <li>12 comprehensive modules</li>
-                            <li>Regulatory compliance focus</li>
+                            <li>SA and IMA foundations</li>
+                            <li>Excel examples and Python code</li>
                         </ul>
-                        
-                        <div class="course-footer">
-                            <div class="course-actions">
-                                <a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Course Details</a>
-                            </div>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/" target="_blank" rel="noopener noreferrer">Enroll on Udemy</a>
+                            <a class="line-link" href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
                     </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="xva-band reveal" aria-label="XVA Essentials">
+            <div class="xva-copy">
+                <p class="kicker">Hosted learning portal</p>
+                <h2>XVA Essentials in Financial Markets</h2>
+                <p>CVA, DVA, FVA, MVA, and KVA explained as practical pricing and risk adjustments that reshape derivatives portfolios.</p>
+            </div>
+            <a class="xva-link" href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer">
+                Launch XVA Essentials
+                <span aria-hidden="true">-&gt;</span>
+            </a>
+        </section>
+
+        <section id="systems" class="section systems-section">
+            <div class="section-intro section-intro-wide">
+                <p class="kicker">Live systems directory</p>
+                <h2>A working map of course sites, tools, and infrastructure.</h2>
+                <p>Filter the directory by function or search for a system by name, category, or URL.</p>
+            </div>
+
+            <div class="system-controls" aria-label="System filters">
+                <div class="filter-tabs" aria-label="Filter systems">
+                    <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-tab" type="button" data-filter="course" aria-pressed="false">Courses</button>
+                    <button class="filter-tab" type="button" data-filter="app" aria-pressed="false">Apps</button>
+                    <button class="filter-tab" type="button" data-filter="infra" aria-pressed="false">Infra</button>
                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Prototypes Section -->
-    <section id="prototypes" class="prototypes-section content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>XVA Essentials – Master the Hidden Costs of Trading</h2>
-                <p style="max-width: 800px; margin: 0 auto;">Learn how valuation adjustments (CVA, DVA, FVA, MVA, KVA) reshape modern derivatives pricing and risk management. 
-                    This free, hosted learning experience combines focused lectures, clear examples, and interactive materials designed to make complex XVA concepts intuitive and practical. 
-                    Understand why traditional risk-neutral pricing is no longer enough—and how XVA impacts every trade, portfolio, and funding decision.</p>
-            </div>
-            <div class="prototype-actions" style="text-align: center;">
-                <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener" class="btn btn-primary btn-large">Launch XVA Essentials</a>
-                <p class="prototype-note">Click through and explore the lecture portal in your browser.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Systems Section -->
-    <section id="systems" class="projects-section content-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-eyebrow">Demo Launcher</p>
-                <h2>Live Systems Directory</h2>
-                <p>Verified against the production droplet on April 14, 2026 using Apache config review and curl checks. Use this section as a quick launcher when you want to move cleanly from one live system to the next.</p>
-                <p class="systems-audit-note">Naming is grouped by function so demos stay predictable: course sites, applications, and infrastructure.</p>
+                <label class="search-field">
+                    <span>Search systems</span>
+                    <input id="system-search" type="search" placeholder="Try QuantLib, MCP, XVA" autocomplete="off">
+                </label>
             </div>
 
-            <div class="systems-grid">
-                <div class="systems-group-card">
-                    <div class="systems-group-header">
-                        <span class="systems-group-kicker">Course Sites</span>
-                        <h3>Training Destinations</h3>
-                        <p>Public course pages and the hosted XVA learning portal.</p>
-                    </div>
+            <div class="systems-grid" id="systems-grid" aria-live="polite">
+                <article class="system-card reveal" data-kind="course" data-search="interest rate derivatives course tglauner.com/mastering_interest_rate_derivatives">
+                    <span class="system-kind">Course site</span>
+                    <h3>Interest Rate Derivatives</h3>
+                    <p>Landing page and enrollment path for swaps, curves, and options training.</p>
+                    <code>tglauner.com/mastering_interest_rate_derivatives/</code>
+                    <a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
 
-                    <div class="systems-list">
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Course Site</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Mastering Interest Rate Derivatives</h4>
-                            <p>Landing page and enrollment funnel for the derivatives course.</p>
-                            <code class="system-url">tglauner.com/mastering_interest_rate_derivatives/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
+                <article class="system-card reveal" data-kind="course" data-search="mortgage asset backed securities mbs abs course tglauner.com/mastering_mbs_and_abs">
+                    <span class="system-kind">Course site</span>
+                    <h3>MBS and ABS</h3>
+                    <p>Structured products course page covering cashflows, prepayment, and analytics.</p>
+                    <code>tglauner.com/mastering_mbs_and_abs/</code>
+                    <a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
 
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Course Site</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Mastering Mortgage and Asset-Backed Securities</h4>
-                            <p>Hosted sales page for the MBS and ABS course.</p>
-                            <code class="system-url">tglauner.com/mastering_mbs_and_abs/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
+                <article class="system-card reveal" data-kind="course" data-search="frtb fundamentals market risk capital tglauner.com/frtb_fundamentals">
+                    <span class="system-kind">Course site</span>
+                    <h3>FRTB Fundamentals</h3>
+                    <p>Regulatory market risk training with practical SA and IMA context.</p>
+                    <code>tglauner.com/frtb_fundamentals/</code>
+                    <a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
 
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Course Site</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Fundamental Review of the Trading Book</h4>
-                            <p>Hosted FRTB course page with direct path into the training offer.</p>
-                            <code class="system-url">tglauner.com/frtb_fundamentals/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
+                <article class="system-card reveal" data-kind="course" data-search="xva essentials cva dva fva mva kva course-xva-essentials.tglauner.com">
+                    <span class="system-kind">Course portal</span>
+                    <h3>XVA Essentials</h3>
+                    <p>Hosted lecture portal for valuation adjustments in derivatives pricing.</p>
+                    <code>course-xva-essentials.tglauner.com/</code>
+                    <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
 
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Course Portal</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>XVA Essentials</h4>
-                            <p>Dedicated subdomain for the hosted XVA lecture experience.</p>
-                            <code class="system-url">course-xva-essentials.tglauner.com/</code>
-                            <div class="system-link-row">
-                                <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-                    </div>
+                <article class="system-card reveal" data-kind="app" data-search="quantlib tools quant.tglauner.com quantitative finance toolkit">
+                    <span class="system-kind">Tool</span>
+                    <h3>QuantLib Tools</h3>
+                    <p>Hosted quantitative finance toolkit on the quant subdomain.</p>
+                    <code>quant.tglauner.com/</code>
+                    <a href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="app" data-search="ai value advisor tglauner.com/ai_value_advisor">
+                    <span class="system-kind">Application</span>
+                    <h3>AI Value Advisor</h3>
+                    <p>Pitch and value message generator with a dedicated API and front end.</p>
+                    <code>tglauner.com/ai_value_advisor/</code>
+                    <a href="https://tglauner.com/ai_value_advisor/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="app" data-search="multi model talkshow tglauner.com/multi_model_talkshow">
+                    <span class="system-kind">Application</span>
+                    <h3>Multi-Model Talkshow</h3>
+                    <p>Multi-model chat interface served from the main domain.</p>
+                    <code>tglauner.com/multi_model_talkshow/</code>
+                    <a href="https://tglauner.com/multi_model_talkshow/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="infra" data-search="financial markets dashboard tglauner.com/dashboard">
+                    <span class="system-kind">Dashboard</span>
+                    <h3>Markets Dashboard</h3>
+                    <p>Compact market dashboard exposed from the main tglauner.com site.</p>
+                    <code>tglauner.com/dashboard/</code>
+                    <a href="https://tglauner.com/dashboard/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+            </div>
+
+            <p class="empty-state" id="empty-state" hidden>No systems match that filter.</p>
+        </section>
+
+        <section id="mcp" class="mcp-section section reveal">
+            <div class="mcp-copy">
+                <p class="kicker">Model Context Protocol</p>
+                <h2>Public MCP endpoint for structured profile context.</h2>
+                <p>The endpoint is available at <code>https://tglauner.com/mcp</code> for compatible MCP clients. Browser requests may receive an accept-header message unless they request the expected transport.</p>
+            </div>
+            <div class="mcp-terminal" aria-label="MCP connection details">
+                <div class="terminal-bar">
+                    <span></span><span></span><span></span>
                 </div>
+                <pre><code>endpoint: https://tglauner.com/mcp
+tool:     profile
+resource: profile.json
+repo:     github.com/tglauner/mcp.tglauner.com</code></pre>
+                <a href="https://github.com/tglauner/mcp.tglauner.com" target="_blank" rel="noopener noreferrer">View repository</a>
+            </div>
+        </section>
 
-                <div class="systems-group-card">
-                    <div class="systems-group-header">
-                        <span class="systems-group-kicker">Applications</span>
-                        <h3>Interactive Apps and Tools</h3>
-                        <p>Live applications, utilities, and scenario tools currently routed through the droplet.</p>
-                    </div>
-
-                    <div class="systems-list">
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Application</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>AI Value Advisor</h4>
-                            <p>Fast value-selling pitch generator with a dedicated front end and API.</p>
-                            <code class="system-url">tglauner.com/ai_value_advisor/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/ai_value_advisor/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Application</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Multi-Model Talkshow</h4>
-                            <p>Multi-model chat interface served from the main domain.</p>
-                            <code class="system-url">tglauner.com/multi_model_talkshow/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/multi_model_talkshow/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Tool</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>QuantLib Tools</h4>
-                            <p>Hosted quantitative finance toolkit on the `quant` subdomain.</p>
-                            <code class="system-url">quant.tglauner.com/</code>
-                            <div class="system-link-row">
-                                <a href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Setup Portal</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>OpenClaw Setup Portal</h4>
-                            <p>Hosted OpenClaw installation and onboarding landing page.</p>
-                            <code class="system-url">openclaw.tglauner.com/</code>
-                            <div class="system-link-row">
-                                <a href="https://openclaw.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Simulator</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Oil &amp; Gasoline Simulator 2026</h4>
-                            <p>Scenario app with a healthy backend exposed on its own subdomain.</p>
-                            <code class="system-url">oil-gasoline-simulator-iran-war-2026.tglauner.com/</code>
-                            <div class="system-link-row">
-                                <a href="https://oil-gasoline-simulator-iran-war-2026.tglauner.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-                    </div>
+        <section id="about" class="about-section section">
+            <div class="about-layout">
+                <div class="about-statement reveal">
+                    <p class="kicker">About</p>
+                    <h2>Practical finance education with quantitative depth.</h2>
+                    <p>TG Investments and Research provides financial education and open-source technology tools for retail and professional investors. Founder Tim Glauner brings more than 30 years of capital markets experience across New York, London, and Paris, with a background spanning quantitative finance, regulatory frameworks, and structured products.</p>
+                    <p>The material is written for people who expect precision: senior traders, structurers, model validators, risk managers, quant developers, and unusually strong learners who want the mechanics behind the desk conversation.</p>
                 </div>
-
-                <div class="systems-group-card">
-                    <div class="systems-group-header">
-                        <span class="systems-group-kicker">Dashboards</span>
-                        <h3>Monitoring and Infrastructure</h3>
-                        <p>Operational views and public-facing infrastructure endpoints that are currently reachable.</p>
+                <div class="about-proof reveal">
+                    <div>
+                        <span>Regulatory</span>
+                        <p>Basel III, FRTB, market risk, and banking controls.</p>
                     </div>
-
-                    <div class="systems-list">
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Dashboard</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Financial Markets Dashboard</h4>
-                            <p>Compact market dashboard exposed from the main tglauner.com site.</p>
-                            <code class="system-url">tglauner.com/dashboard/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/dashboard/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Analytics</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Visitor Log</h4>
-                            <p>Browser-based analytics log for quick traffic and visit review.</p>
-                            <code class="system-url">tglauner.com/visitor_log/</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/visitor_log/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open System</a>
-                            </div>
-                        </article>
-
-                        <article class="system-item">
-                            <div class="system-meta">
-                                <span class="system-type">Endpoint</span>
-                                <span class="system-status">Verified Live</span>
-                            </div>
-                            <h4>Public MCP Server</h4>
-                            <p>Reachable on the main domain at `/mcp`; standard browsers return an accept-header message unless they request `text/event-stream`.</p>
-                            <code class="system-url">tglauner.com/mcp</code>
-                            <div class="system-link-row">
-                                <a href="https://tglauner.com/mcp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Endpoint</a>
-                                <a href="https://github.com/tglauner/mcp.tglauner.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View GitHub</a>
-                            </div>
-                        </article>
+                    <div>
+                        <span>Markets</span>
+                        <p>Derivatives, structured products, trading floor workflows.</p>
+                    </div>
+                    <div>
+                        <span>Quant</span>
+                        <p>Python, Excel, modeling, analytics, and implementation detail.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section content-section">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About TG Investments and Research</h2>
-                    <p>We try to be innovative. Our mission is to provide cutting-edge financial education and open-source technology tools for both retail and professional investors.</p>
-                    <p>With over 30 years of experience in capital markets across New York, London, and Paris, our founder Tim Glauner brings unparalleled expertise as a Wall Street quant with a strong NY professional career, specializing in quantitative finance, regulatory frameworks, and structured products.</p>
-                    <p>Our founder is also an alumnus of the Courant Institute of Mathematical Sciences at New York University and the Technical University of Karlsruhe, further solidifying our commitment to rigorous quantitative approaches.</p>
-
-                    <div class="stats-grid">
-                        <div class="stat">
-                            <div class="stat-number">30+</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">100+</div>
-                            <div class="stat-label">Institutions Served</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">4.8/5</div>
-                            <div class="stat-label">Average Rating</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-cards">
-                    <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3>Regulatory Expertise</h3>
-                        <p>Deep knowledge of Basel III, FRTB, and other critical regulatory frameworks essential for modern banking.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">📈</div>
-                        <h3>Market Experience</h3>
-                        <p>Real-world trading floor experience in derivatives, structured products, and risk management.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">🧮</div>
-                        <h3>Quantitative Focus</h3>
-                        <p>Advanced mathematical modeling and programming expertise with Python, Excel, and industry tools.</p>
-                    </div>
-                </div>
+        <section class="location-section" aria-label="Location map">
+            <div class="location-copy reveal">
+                <p class="kicker">Manhasset, New York</p>
+                <h2>Rooted on the North Shore.</h2>
+                <p>TG Investments and Research, LLC. PO Box 802, 155 Stonytown Road, Manhasset, NY 11030.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- GitHub Section -->
-    <section id="github" class="github-section content-section" data-github-user="tglauner">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-eyebrow">Open Source</p>
-                <h2>GitHub Repositories</h2>
-                <p>Public repositories and descriptions pulled live from GitHub.</p>
+            <div class="map-frame reveal">
+                <iframe
+                    title="TG Investments and Research office location"
+                    src="https://www.google.com/maps?q=155+Stonytown+Rd,+Manhasset,+NY+11030&t=k&z=16&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
             </div>
+        </section>
+    </main>
 
-            <div class="github-profile">
-                <div class="github-handle" id="github-handle">github.com/tglauner</div>
-                <a id="github-profile-link" href="https://github.com/tglauner" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View GitHub</a>
-            </div>
-
-            <p id="github-status" class="github-status">Loading repositories...</p>
-            <div id="github-repo-grid" class="github-grid" aria-live="polite"></div>
-        </div>
-    </section>
-
-    <!-- MCP Section -->
-    <section id="mcp" class="mcp-section content-section">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-eyebrow">Model Context Protocol</p>
-                <span class="mcp-status live">Live Endpoint</span>
-                <h2>Public MCP Server</h2>
-                <p>The public MCP server is reachable today on the main tglauner.com domain. Standard browser requests receive an accept-header message, while MCP clients can connect directly using the endpoint below.</p>
-            </div>
-
-            <div class="mcp-grid">
-                <div class="mcp-card">
-                    <h3>What it is</h3>
-                    <p>Streamable HTTP MCP endpoint with read-only profile data for quick, structured context.</p>
-                    <ul class="mcp-list">
-                        <li><span class="mcp-label">Tool:</span> <code>profile</code> returns a summary plus JSON.</li>
-                        <li><span class="mcp-label">Resource:</span> <code>profile.json</code> returns Schema.org Person data.</li>
-                        <li><span class="mcp-label">Transport:</span> Streamable HTTP at <code>https://tglauner.com/mcp</code>.</li>
-                    </ul>
-                </div>
-
-                <div class="mcp-card">
-                    <h3>How to connect</h3>
-                    <p>Point any MCP client at the endpoint below. For a quick test, use the MCP Inspector against the live `/mcp` route on the main domain.</p>
-                    <div class="mcp-endpoint">
-                        <span class="endpoint-label">Endpoint</span>
-                        <code>https://tglauner.com/mcp</code>
-                    </div>
-                    <pre class="code-block"><code>npx -y @modelcontextprotocol/inspector https://tglauner.com/mcp</code></pre>
-                    <div class="mcp-actions">
-                        <a href="https://tglauner.com/mcp" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open MCP Endpoint</a>
-                        <a href="https://github.com/tglauner/mcp.tglauner.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 TG Investments and Research, LLC. All rights reserved.</p>
-                <p class="footer-address">PO Box 802, 155 Stonytown Road, Manhasset, NY 11030</p>
-                <div class="footer-map">
-                    <iframe
-                        title="TG Investments and Research office location"
-                        src="https://www.google.com/maps?q=155+Stonytown+Rd,+Manhasset,+NY+11030&t=k&z=16&output=embed"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
+    <footer class="site-footer">
+        <p>&copy; 2026 TG Investments and Research, LLC.</p>
+        <p>PO Box 802, 155 Stonytown Road, Manhasset, NY 11030</p>
     </footer>
 
-    <script>
-        // Stochastic Interest Rate Curves Animation
-        (function() {
-            const canvas = document.getElementById('interestRateCanvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            let animationId;
-            let particles = [];
-            let curves = [];
-            
-            // Scientific/physics lab colors - muted and professional
-            const curveColors = [
-                { r: 0, g: 255, b: 150 },      // Oscilloscope green
-                { r: 64, g: 200, b: 224 },     // Muted cyan
-                { r: 180, g: 200, b: 220 }     // Subtle blue-gray
-            ];
-            
-            // Set canvas size
-            let initCurves; // Will be assigned after class definition
-            function resizeCanvas() {
-                const oldWidth = canvas.width || 0;
-                const oldHeight = canvas.height || 0;
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-                
-                // Reinitialize curves if canvas size changed and initCurves is available
-                if (initCurves && (oldWidth !== canvas.width || oldHeight !== canvas.height)) {
-                    if (canvas.width > 0 && canvas.height > 0) {
-                        initCurves();
-                    }
-                }
-            }
-            
-            // Particle class
-            class Particle {
-                constructor(x, y) {
-                    this.x = x;
-                    this.y = y;
-                    this.vx = (Math.random() - 0.5) * 0.5;
-                    this.vy = (Math.random() - 0.5) * 0.5;
-                    this.radius = Math.random() * 2 + 1;
-                    this.life = 1.0;
-                    this.decay = Math.random() * 0.005 + 0.002;
-                    this.color = curveColors[Math.floor(Math.random() * curveColors.length)];
-                }
-                
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    this.life -= this.decay;
-                    this.vx *= 0.99;
-                    this.vy *= 0.99;
-                }
-                
-                draw() {
-                    if (this.life <= 0) return;
-                    ctx.save();
-                    ctx.globalAlpha = this.life * 0.3;
-                    ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0.4)`;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius * 1.5, 0, Math.PI * 2);
-                    ctx.fill();
-                    ctx.restore();
-                }
-            }
-            
-            // Stochastic Curve class (Geometric Brownian Motion)
-            class StochasticCurve {
-                constructor(color, baseLevel, volatility) {
-                    this.color = color;
-                    this.baseLevel = baseLevel; // Base interest rate level
-                    this.volatility = volatility;
-                    this.points = [];
-                    this.numPoints = 120;
-                    this.drift = (Math.random() - 0.5) * 0.001;
-                    this.amplitudePhase = Math.random() * Math.PI * 2; // Random starting phase for amplitude oscillation
-                    this.amplitudeSpeed = (Math.random() * 0.002 + 0.001); // Speed of amplitude oscillation
-                    this.baseAmplitude = 0.25; // Base amplitude (25% of canvas height)
-                    this.amplitudeVariation = 0.15; // How much amplitude can vary (±15%)
-                    this.initialize();
-                }
-                
-                initialize() {
-                    const spacing = canvas.width / this.numPoints;
-                    for (let i = 0; i <= this.numPoints; i++) {
-                        const x = i * spacing;
-                        const y = canvas.height * 0.5 + (Math.random() - 0.5) * canvas.height * 0.3;
-                        this.points.push({ x, y, vy: 0 });
-                    }
-                }
-                
-                getCurrentAmplitude() {
-                    // Oscillate amplitude between baseAmplitude ± amplitudeVariation
-                    const oscillation = Math.sin(this.amplitudePhase) * this.amplitudeVariation;
-                    return this.baseAmplitude + oscillation;
-                }
-                
-                update() {
-                    // Update amplitude phase for oscillation
-                    this.amplitudePhase += this.amplitudeSpeed;
-                    
-                    // Get current amplitude (oscillates over time)
-                    const currentAmplitude = this.getCurrentAmplitude();
-                    const centerY = this.baseLevel * canvas.height;
-                    const amplitudeHeight = currentAmplitude * canvas.height;
-                    
-                    // Geometric Brownian Motion: dS = mu*S*dt + sigma*S*dW
-                    for (let i = 1; i < this.points.length; i++) {
-                        const point = this.points[i];
-                        const prevPoint = this.points[i - 1];
-                        
-                        // Mean reversion towards base level with dynamic amplitude bounds
-                        const meanReversion = (centerY - point.y) * 0.01;
-                        
-                        // Correlation with adjacent points for smoother curves
-                        const correlation = (prevPoint.y - point.y) * 0.05;
-                        
-                        // Stochastic component (Brownian motion) - scale with current amplitude
-                        const randomWalk = (Math.random() - 0.5) * this.volatility * (0.5 + currentAmplitude * 2);
-                        
-                        // Update velocity
-                        point.vy = point.vy * 0.8 + meanReversion + correlation + randomWalk + this.drift;
-                        
-                        // Update position
-                        point.y += point.vy;
-                        
-                        // Dynamic bounds based on current amplitude
-                        const minY = centerY - amplitudeHeight;
-                        const maxY = centerY + amplitudeHeight;
-                        
-                        // Keep within bounds with smooth reflection
-                        if (point.y < minY) {
-                            point.y = minY;
-                            point.vy *= -0.5;
-                        } else if (point.y > maxY) {
-                            point.y = maxY;
-                            point.vy *= -0.5;
-                        }
-                    }
-                    
-                    // Emit particles along the curve (very infrequent for cleaner look)
-                    if (Math.random() < 0.05) {
-                        const randomIndex = Math.floor(Math.random() * this.points.length);
-                        const point = this.points[randomIndex];
-                        particles.push(new Particle(point.x, point.y));
-                    }
-                }
-                
-                draw() {
-                    // Draw thin scientific line
-                    ctx.save();
-                    ctx.lineWidth = 1;
-                    ctx.lineCap = 'round';
-                    ctx.lineJoin = 'round';
-                    
-                    // Solid color, no gradient
-                    ctx.strokeStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, 0.9)`;
-                    
-                    ctx.beginPath();
-                    ctx.moveTo(this.points[0].x, this.points[0].y);
-                    
-                    // Draw smooth curve using quadratic bezier
-                    for (let i = 1; i < this.points.length; i++) {
-                        const current = this.points[i];
-                        const previous = this.points[i - 1];
-                        const controlX = (previous.x + current.x) / 2;
-                        const controlY = (previous.y + current.y) / 2;
-                        ctx.quadraticCurveTo(previous.x, previous.y, controlX, controlY);
-                    }
-                    ctx.lineTo(this.points[this.points.length - 1].x, this.points[this.points.length - 1].y);
-                    ctx.stroke();
-                    
-                    ctx.restore();
-                }
-            }
-            
-            // Draw very subtle grid background
-            function drawGrid() {
-                ctx.strokeStyle = 'rgba(100, 150, 180, 0.04)';
-                ctx.lineWidth = 0.5;
-                
-                // Vertical lines
-                const vSpacing = canvas.width / 12;
-                for (let x = 0; x <= canvas.width; x += vSpacing) {
-                    ctx.beginPath();
-                    ctx.moveTo(x, 0);
-                    ctx.lineTo(x, canvas.height);
-                    ctx.stroke();
-                }
-                
-                // Horizontal lines
-                const hSpacing = canvas.height / 8;
-                for (let y = 0; y <= canvas.height; y += hSpacing) {
-                    ctx.beginPath();
-                    ctx.moveTo(0, y);
-                    ctx.lineTo(canvas.width, y);
-                    ctx.stroke();
-                }
-            }
-            
-            // Initialize curves (fewer curves for cleaner look)
-            initCurves = function() {
-                curves = [];
-                const levels = [0.5, 0.45, 0.55];
-                const volatilities = [6, 8, 7];
-                curveColors.forEach((color, i) => {
-                    curves.push(new StochasticCurve(color, levels[i], volatilities[i]));
-                });
-            };
-            
-            // Animation loop
-            function animate() {
-                ctx.fillStyle = 'rgba(3, 7, 18, 0.08)'; // Subtle fade effect
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                // Draw grid (very subtle background)
-                drawGrid();
-                
-                // Update and draw curves
-                curves.forEach(curve => {
-                    curve.update();
-                    curve.draw();
-                });
-                
-                // Update and draw particles
-                particles = particles.filter(particle => {
-                    particle.update();
-                    particle.draw();
-                    return particle.life > 0;
-                });
-                
-                // Limit particles (fewer particles for cleaner look)
-                if (particles.length > 30) {
-                    particles = particles.slice(-30);
-                }
-                
-                animationId = requestAnimationFrame(animate);
-            }
-            
-            // Initialize and start animation
-            resizeCanvas(); // Ensure canvas is sized
-            window.addEventListener('resize', resizeCanvas);
-            initCurves();
-            animate();
-            
-            // Pause animation when tab is not visible
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    cancelAnimationFrame(animationId);
-                } else {
-                    animate();
-                }
-            });
-        })();
-
-        // SOFR Curve Building Animation
-        (function() {
-            const canvas = document.getElementById('sofrCurveCanvas');
-            if (!canvas) return;
-            
-            const ctx = canvas.getContext('2d');
-            let animationId;
-            
-            // SOFR rate data (maturity in years, rate in %)
-            const sofrData = [
-                { maturity: 0.00274, rate: 4.00, label: 'O/N' }, // Overnight (1 day)
-                { maturity: 0.25, rate: 4.20, label: '3M' },
-                { maturity: 0.33, rate: 4.30, label: '4M' },
-                { maturity: 0.42, rate: 4.35, label: '5M' },
-                { maturity: 0.50, rate: 4.40, label: '6M' },
-                { maturity: 0.58, rate: 4.45, label: '7M' },
-                { maturity: 0.67, rate: 4.50, label: '8M' },
-                { maturity: 2, rate: 4.10, label: '2Y' },
-                { maturity: 3, rate: 4.15, label: '3Y' },
-                { maturity: 4, rate: 4.18, label: '4Y' },
-                { maturity: 5, rate: 4.20, label: '5Y' },
-                { maturity: 7, rate: 4.25, label: '7Y' },
-                { maturity: 10, rate: 4.28, label: '10Y' },
-                { maturity: 15, rate: 4.30, label: '15Y' },
-                { maturity: 20, rate: 4.35, label: '20Y' },
-                { maturity: 25, rate: 4.55, label: '25Y' },
-                { maturity: 30, rate: 4.60, label: '30Y' }
-            ];
-            
-            let builtPoints = [];
-            let currentPointIndex = 0;
-            let buildStartTime = null;
-            let isBuilding = true;
-            let curvePoints = [];
-            let shockPhase = 0;
-            let shockCount = 0;
-            let resetShockThreshold = 250; // Reset after this many shocks
-            let curveTransform = {
-                steepener: 0,      // Steepening/flattening (positive = steepener)
-                twist: 0,          // Curve twist (positive = long end up)
-                parallelShift: 0,  // Parallel shift up/down
-                slopeChange: 0     // Overall slope rotation
-            };
-            let transformPhase = 0;
-            
-            // Set canvas size
-            function resizeCanvas() {
-                canvas.width = canvas.offsetWidth;
-                canvas.height = canvas.offsetHeight;
-                // Reset building when canvas resizes
-                if (isBuilding) {
-                    builtPoints = [];
-                    currentPointIndex = 0;
-                    buildStartTime = null;
-                }
-            }
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-            
-            // Convert data to screen coordinates
-            function dataToScreen(maturity, rate) {
-                const padding = { top: 60, right: 80, bottom: 80, left: 80 };
-                const width = canvas.width - padding.left - padding.right;
-                const height = canvas.height - padding.top - padding.bottom;
-                
-                // Map maturity (0-30 years) to x
-                const maxMaturity = 30;
-                const x = padding.left + (maturity / maxMaturity) * width;
-                
-                // Map rate (3.5% - 5.0%) to y (inverted, higher rates = lower y)
-                const minRate = 3.5;
-                const maxRate = 5.0;
-                const y = padding.top + height - ((rate - minRate) / (maxRate - minRate)) * height;
-                
-                return { x, y };
-            }
-            
-            // Draw grid
-            function drawGrid() {
-                const padding = { top: 60, right: 80, bottom: 80, left: 80 };
-                const width = canvas.width - padding.left - padding.right;
-                const height = canvas.height - padding.top - padding.bottom;
-                
-                ctx.strokeStyle = 'rgba(0, 255, 150, 0.08)';
-                ctx.lineWidth = 0.5;
-                
-                // Horizontal lines (rate levels)
-                const minRate = 3.5;
-                const maxRate = 5.0;
-                for (let rate = minRate; rate <= maxRate; rate += 0.25) {
-                    const y = dataToScreen(0, rate).y;
-                    ctx.beginPath();
-                    ctx.moveTo(padding.left, y);
-                    ctx.lineTo(canvas.width - padding.right, y);
-                    ctx.stroke();
-                    
-                    // Rate labels
-                    ctx.fillStyle = 'rgba(0, 255, 150, 0.5)';
-                    ctx.font = '11px monospace';
-                    ctx.textAlign = 'right';
-                    ctx.fillText(rate.toFixed(2) + '%', padding.left - 10, y + 4);
-                }
-                
-                // Vertical lines (maturity)
-                const maxMaturity = 30;
-                for (let year = 0; year <= maxMaturity; year += 5) {
-                    const x = dataToScreen(year, 0).x;
-                    ctx.beginPath();
-                    ctx.moveTo(x, padding.top);
-                    ctx.lineTo(x, canvas.height - padding.bottom);
-                    ctx.stroke();
-                    
-                    // Maturity labels
-                    ctx.fillStyle = 'rgba(0, 255, 150, 0.5)';
-                    ctx.font = '11px monospace';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(year + 'Y', x, canvas.height - padding.bottom + 20);
-                }
-                
-                // Axes
-                ctx.strokeStyle = 'rgba(0, 255, 150, 0.3)';
-                ctx.lineWidth = 1;
-                
-                // X-axis
-                ctx.beginPath();
-                ctx.moveTo(padding.left, canvas.height - padding.bottom);
-                ctx.lineTo(canvas.width - padding.right, canvas.height - padding.bottom);
-                ctx.stroke();
-                
-                // Y-axis
-                ctx.beginPath();
-                ctx.moveTo(padding.left, padding.top);
-                ctx.lineTo(padding.left, canvas.height - padding.bottom);
-                ctx.stroke();
-            }
-            
-            // Build curve point by point
-            function updateBuilding(currentTime) {
-                if (!buildStartTime) {
-                    buildStartTime = currentTime;
-                }
-                
-                const elapsed = (currentTime - buildStartTime) / 1000; // Convert to seconds
-                const pointsToShow = Math.floor(elapsed); // One point per second
-                
-                if (pointsToShow >= sofrData.length) {
-                    // Finished building, switch to stochastic mode
-                    if (isBuilding) {
-                        isBuilding = false;
-                        // Initialize curve points for stochastic shocks
-                        curvePoints = sofrData.map(d => {
-                            const screen = dataToScreen(d.maturity, d.rate);
-                            return {
-                                x: screen.x,
-                                y: screen.y,
-                                baseY: screen.y,
-                                targetY: screen.y, // For smooth resets
-                                vy: 0,
-                                rate: d.rate,
-                                maturity: d.maturity
-                            };
-                        });
-                        // Reset transform state
-                        curveTransform = { steepener: 0, twist: 0, parallelShift: 0, slopeChange: 0 };
-                        shockCount = 0;
-                        transformPhase = 0;
-                    }
-                    return;
-                }
-                
-                // Update built points
-                builtPoints = sofrData.slice(0, pointsToShow + 1).map(d => dataToScreen(d.maturity, d.rate));
-            }
-            
-            // Apply curve transformations
-            function applyCurveTransforms() {
-                transformPhase += 0.005;
-                
-                // Periodically introduce curve transformations (every ~100 shocks)
-                if (shockCount % 1000 === 0 && shockCount > 0) {
-                    const transformType = Math.floor(Math.random() * 4);
-                    const intensity = (Math.random() - 0.5) * 0.5; // -0.25 to 0.25
-                    
-                    switch (transformType) {
-                        case 0: // Steepener/Flattener
-                            curveTransform.steepener = intensity;
-                            break;
-                        case 1: // Twist
-                            curveTransform.twist = intensity;
-                            break;
-                        case 2: // Parallel shift
-                            curveTransform.parallelShift = intensity * 30; // pixels
-                            break;
-                        case 3: // Slope change
-                            curveTransform.slopeChange = intensity * 0.3;
-                            break;
-                    }
-                }
-                
-                // Gradually decay transformations
-                curveTransform.steepener *= 0.98;
-                curveTransform.twist *= 0.98;
-                curveTransform.parallelShift *= 0.98;
-                curveTransform.slopeChange *= 0.98;
-            }
-            
-            // Apply stochastic shocks to curve
-            function updateStochastic() {
-                if (curvePoints.length === 0) return;
-                
-                shockCount++;
-                shockPhase += 0.01;
-                
-                // Reset curve to original after threshold
-                if (shockCount >= resetShockThreshold) {
-                    // Smooth reset over ~50 frames
-                    const resetProgress = Math.min((shockCount - resetShockThreshold) / 50, 1);
-                    
-                    for (let i = 0; i < curvePoints.length; i++) {
-                        const point = curvePoints[i];
-                        point.targetY = point.baseY;
-                        point.y = point.y * (1 - resetProgress * 0.1) + point.targetY * (resetProgress * 0.1);
-                        point.vy *= 0.95; // Dampen velocity
-                    }
-                    
-                    // Reset transformations
-                    curveTransform.steepener *= 0.95;
-                    curveTransform.twist *= 0.95;
-                    curveTransform.parallelShift *= 0.95;
-                    curveTransform.slopeChange *= 0.95;
-                    
-                    // Reset counter after reset is complete
-                    if (resetProgress >= 1) {
-                        shockCount = 0;
-                        curveTransform = { steepener: 0, twist: 0, parallelShift: 0, slopeChange: 0 };
-                        for (let i = 0; i < curvePoints.length; i++) {
-                            curvePoints[i].y = curvePoints[i].baseY;
-                            curvePoints[i].vy = 0;
-                        }
-                    }
-                    
-                    return;
-                }
-                
-                // Apply curve transformations
-                applyCurveTransforms();
-                
-                const maxMaturity = 30;
-                
-                for (let i = 0; i < curvePoints.length; i++) {
-                    const point = curvePoints[i];
-                    const maturity = point.maturity;
-                    const maturityFactor = maturity / maxMaturity; // 0 to 1
-                    
-                    // Base stochastic shock (increased volatility)
-                    const baseShock = (Math.random() - 0.5) * 8; // Increased from 3 to 8
-                    
-                    // Curve transformations
-                    let transformShift = 0;
-                    
-                    // 1. Steepener/Flattener: long end moves more than short end
-                    transformShift += curveTransform.steepener * maturityFactor * 40;
-                    
-                    // 2. Twist: mid-curve moves differently than ends
-                    const twistFactor = Math.sin(maturityFactor * Math.PI); // Peak at mid-curve
-                    transformShift += curveTransform.twist * twistFactor * 30;
-                    
-                    // 3. Parallel shift: all points move together
-                    transformShift += curveTransform.parallelShift;
-                    
-                    // 4. Slope change: rotation around midpoint
-                    const midMaturity = maxMaturity / 2;
-                    transformShift += curveTransform.slopeChange * (maturity - midMaturity) * 2;
-                    
-                    // Mean reversion with transformation target
-                    const targetY = point.baseY + transformShift;
-                    const meanReversion = (targetY - point.y) * 0.08;
-                    
-                    // Correlate with adjacent points for smoother curve
-                    let correlation = 0;
-                    if (i > 0) correlation += (curvePoints[i - 1].y - point.y) * 0.04;
-                    if (i < curvePoints.length - 1) correlation += (curvePoints[i + 1].y - point.y) * 0.04;
-                    
-                    // Increased volatility with maturity-dependent scaling
-                    const maturityVolatility = 0.8 + maturityFactor * 0.4; // Long end more volatile
-                    const shock = baseShock * maturityVolatility;
-                    
-                    // Update velocity (less damping for more movement)
-                    point.vy = point.vy * 0.88 + meanReversion + correlation + shock * 0.15;
-                    point.y += point.vy;
-                }
-            }
-            
-            // Draw curve
-            function drawCurve() {
-                if (isBuilding && builtPoints.length === 0) return;
-                
-                ctx.save();
-                ctx.strokeStyle = '#00ff96';
-                ctx.lineWidth = 2;
-                ctx.lineCap = 'round';
-                ctx.lineJoin = 'round';
-                
-                ctx.beginPath();
-                
-                if (isBuilding) {
-                    // Draw building curve
-                    if (builtPoints.length > 0) {
-                        ctx.moveTo(builtPoints[0].x, builtPoints[0].y);
-                        
-                        // Draw smooth curve
-                        for (let i = 1; i < builtPoints.length; i++) {
-                            const prev = builtPoints[i - 1];
-                            const curr = builtPoints[i];
-                            const cpX = (prev.x + curr.x) / 2;
-                            const cpY = (prev.y + curr.y) / 2;
-                            ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
-                        }
-                        
-                        // Draw to last point
-                        if (builtPoints.length > 1) {
-                            const last = builtPoints[builtPoints.length - 1];
-                            ctx.lineTo(last.x, last.y);
-                        }
-                    }
-                } else {
-                    // Draw stochastic curve
-                    if (curvePoints.length > 0) {
-                        ctx.moveTo(curvePoints[0].x, curvePoints[0].y);
-                        
-                        for (let i = 1; i < curvePoints.length; i++) {
-                            const prev = curvePoints[i - 1];
-                            const curr = curvePoints[i];
-                            const cpX = (prev.x + curr.x) / 2;
-                            const cpY = (prev.y + curr.y) / 2;
-                            ctx.quadraticCurveTo(prev.x, prev.y, cpX, cpY);
-                        }
-                        
-                        const last = curvePoints[curvePoints.length - 1];
-                        ctx.lineTo(last.x, last.y);
-                    }
-                }
-                
-                ctx.stroke();
-                
-                // Draw points
-                ctx.fillStyle = '#00ff96';
-                
-                if (isBuilding) {
-                    builtPoints.forEach((point, i) => {
-                        ctx.beginPath();
-                        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
-                        ctx.fill();
-                        
-                        // Draw label for last point being built
-                        if (i === builtPoints.length - 1) {
-                            const data = sofrData[i];
-                            if (data && data.label) {
-                                ctx.fillStyle = 'rgba(0, 255, 150, 0.7)';
-                                ctx.font = '10px monospace';
-                                ctx.textAlign = 'center';
-                                ctx.fillText(data.label, point.x, point.y - 12);
-                                ctx.fillStyle = '#00ff96';
-                            }
-                        }
-                    });
-                } else {
-                    curvePoints.forEach((point, i) => {
-                        ctx.beginPath();
-                        ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
-                        ctx.fill();
-                        
-                        // Draw labels for key maturity points
-                        const data = sofrData[i];
-                        if (data && (data.label === 'O/N' || data.label.includes('Y'))) {
-                            ctx.fillStyle = 'rgba(0, 255, 150, 0.7)';
-                            ctx.font = '10px monospace';
-                            ctx.textAlign = 'center';
-                            ctx.fillText(data.label, point.x, point.y - 12);
-                            ctx.fillStyle = '#00ff96';
-                        }
-                    });
-                }
-                
-                ctx.restore();
-            }
-            
-            // Animation loop
-            function animate(currentTime) {
-                ctx.fillStyle = 'rgba(3, 7, 18, 0.1)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                drawGrid();
-                
-                if (isBuilding) {
-                    updateBuilding(currentTime);
-                } else {
-                    updateStochastic();
-                }
-                
-                drawCurve();
-                
-                animationId = requestAnimationFrame(animate);
-            }
-            
-            // Start animation
-            animationId = requestAnimationFrame(animate);
-            
-            // Pause when tab is hidden
-            document.addEventListener('visibilitychange', () => {
-                if (document.hidden) {
-                    cancelAnimationFrame(animationId);
-                } else {
-                    animationId = requestAnimationFrame(animate);
-                }
-            });
-        })();
-
-        // Simple smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Price tickers for BTC, ETH, and S&P 500
-        async function fetchTickers() {
-            try {
-                const cryptoRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
-                const cryptoData = await cryptoRes.json();
-                document.getElementById('btc-price').textContent = '$' + cryptoData.bitcoin.usd.toLocaleString();
-                document.getElementById('eth-price').textContent = '$' + cryptoData.ethereum.usd.toLocaleString();
-            } catch (err) {
-                console.error('Error fetching crypto prices', err);
-            }
-
-            try {
-                const spRes = await fetch('https://query1.finance.yahoo.com/v7/finance/quote?symbols=%5EGSPC');
-                const spData = await spRes.json();
-                const spPrice = spData.quoteResponse.result[0].regularMarketPrice;
-                document.getElementById('sp500-price').textContent = spPrice.toLocaleString();
-            } catch (err) {
-                console.error('Error fetching S&P 500 price', err);
-            }
-        }
-        fetchTickers();
-
-        async function fetchGitHubRepos() {
-            const section = document.getElementById('github');
-            if (!section) return;
-
-            const username = section.getAttribute('data-github-user');
-            const repoGrid = document.getElementById('github-repo-grid');
-            const status = document.getElementById('github-status');
-            const handle = document.getElementById('github-handle');
-            const profileLink = document.getElementById('github-profile-link');
-
-            if (!username) {
-                if (status) {
-                    status.textContent = 'GitHub username not configured.';
-                }
-                return;
-            }
-
-            const profileUrl = `https://github.com/${username}`;
-            if (handle) {
-                handle.textContent = profileUrl.replace('https://', '');
-            }
-            if (profileLink) {
-                profileLink.href = profileUrl;
-            }
-
-            const repos = [];
-            let page = 1;
-            const perPage = 100;
-
-            try {
-                while (true) {
-                    const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}&sort=updated`);
-                    if (!response.ok) {
-                        throw new Error(`GitHub API error: ${response.status}`);
-                    }
-                    const data = await response.json();
-                    repos.push(...data);
-                    if (data.length < perPage) {
-                        break;
-                    }
-                    page += 1;
-                }
-            } catch (err) {
-                console.error('Error fetching GitHub repositories', err);
-                if (status) {
-                    status.textContent = 'Unable to load GitHub repositories right now.';
-                }
-                return;
-            }
-
-            if (repoGrid) {
-                repoGrid.innerHTML = '';
-            }
-
-            const publicRepos = repos.filter((repo) => !repo.private && repo.visibility !== 'private');
-
-            if (!publicRepos.length) {
-                if (status) {
-                    status.textContent = 'No repositories found.';
-                }
-                return;
-            }
-
-            const fragment = document.createDocumentFragment();
-
-            publicRepos.forEach((repo) => {
-                const card = document.createElement('article');
-                card.className = 'github-card';
-
-                const title = document.createElement('h3');
-                const link = document.createElement('a');
-                link.href = repo.html_url;
-                link.target = '_blank';
-                link.rel = 'noopener noreferrer';
-                link.textContent = repo.name;
-                title.appendChild(link);
-
-                const description = document.createElement('p');
-                description.textContent = repo.description ? repo.description : 'No description provided.';
-
-                const meta = document.createElement('div');
-                meta.className = 'github-meta';
-
-                if (repo.language) {
-                    const language = document.createElement('span');
-                    language.textContent = repo.language;
-                    meta.appendChild(language);
-                }
-
-                const updated = document.createElement('span');
-                if (repo.updated_at) {
-                    const updatedDate = new Date(repo.updated_at);
-                    if (!Number.isNaN(updatedDate.getTime())) {
-                        updated.textContent = `Updated ${updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}`;
-                    } else {
-                        updated.textContent = 'Updated date unavailable';
-                    }
-                } else {
-                    updated.textContent = 'Updated date unavailable';
-                }
-                meta.appendChild(updated);
-
-                card.appendChild(title);
-                card.appendChild(description);
-                card.appendChild(meta);
-
-                fragment.appendChild(card);
-            });
-
-            if (repoGrid) {
-                repoGrid.appendChild(fragment);
-            }
-            if (status) {
-                status.textContent = `Showing ${publicRepos.length} public repositories.`;
-            }
-        }
-        fetchGitHubRepos();
-    </script>
+    <script src="app.js?v=20260730"></script>
 </body>
 </html>

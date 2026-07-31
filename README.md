@@ -6,15 +6,18 @@ Static landing page for `https://tglauner.com/`.
 
 - Main homepage markup: `index.html`
 - Main homepage styles: `styles.css`
+- Homepage interactions and quantitative canvas: `app.js`
 - Static assets: `assets/`
 
 ## Current Homepage Structure
 
-- Course cards for Interest Rate Derivatives, MBS/ABS, and FRTB
+- Image-led hero and capital-markets experience summary
+- Interactive rates, callable-boundary, and XVA visualization
+- Course offers for Interest Rate Derivatives, MBS/ABS, and FRTB
 - XVA Essentials launch section
-- Live Systems Directory for demo navigation
+- Searchable and filterable live systems directory
 - Public MCP section
-- GitHub repositories section
+- About, location map, and legal footer
 
 ## Verified Live Systems
 
