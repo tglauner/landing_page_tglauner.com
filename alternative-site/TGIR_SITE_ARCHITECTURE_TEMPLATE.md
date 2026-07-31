@@ -100,7 +100,7 @@ Each course row should include:
 Use direct Udemy course URLs unless there is a current verified coupon code. Coupon URLs should keep the token in the query string, for example:
 
 ```text
-https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_APR_2026
+https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_AUG_2026
 ```
 
 ## Quant Animation Pattern
