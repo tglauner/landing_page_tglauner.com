@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TG Investments and Research | Alternative Site Concept</title>
+    <meta name="description" content="Alternative homepage concept for TG Investments and Research courses, tools, and public systems.">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary">
+        <a class="brand-lockup" href="#top" aria-label="TG Investments and Research home">
+            <img class="brand-icon" src="assets/favicon.png" alt="" aria-hidden="true">
+            <span class="brand-name">TG Investments and Research</span>
+        </a>
+        <nav class="primary-nav" aria-label="Main navigation">
+            <a href="#courses">Courses</a>
+            <a href="#systems">Systems</a>
+            <a href="#mcp">MCP</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="top" class="hero-section" aria-label="TG Investments and Research overview">
+            <img class="hero-image" src="assets/hero-bg.jpg" alt="Trading desk screens and market workspace">
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="hero-copy reveal-on-load">
+                <p class="kicker">Advanced rates, XVA, and structured products</p>
+                <h1>TG Investments and Research</h1>
+                <p class="hero-lede">Quantitative finance courses and working tools for people operating close to the front office: SOFR curves, swaptions, callable structures, XVA, securitized cashflows, and market risk capital.</p>
+                <div class="hero-actions" aria-label="Primary actions">
+                    <a class="text-action text-action-strong" href="#courses">View courses <span aria-hidden="true">-&gt;</span></a>
+                    <a class="text-action" href="#systems">Open systems <span aria-hidden="true">-&gt;</span></a>
+                </div>
+            </div>
+
+            <aside class="desk-strip reveal-on-load" aria-label="Experience summary">
+                <div>
+                    <span class="desk-number">30+</span>
+                    <span class="desk-label">Years in capital markets</span>
+                </div>
+                <div>
+                    <span class="desk-number">NY-LON-PAR</span>
+                    <span class="desk-label">Trading and risk perspective</span>
+                </div>
+                <div>
+                    <span class="desk-number">SOFR / Swaptions / XVA</span>
+                    <span class="desk-label">Built for demanding quant and trading conversations</span>
+                </div>
+            </aside>
+        </section>
+
+        <section class="quant-lab-section" aria-label="Quant rates animation lab">
+            <div class="quant-lab-copy reveal">
+                <p class="kicker">Quant rates lab</p>
+                <h2>Stochastic rates, callable boundaries, and XVA exposure in motion.</h2>
+                <p>The animation uses a Hull-White style short-rate process to show mean-reverting paths, a callable exercise zone, and exposure tails. It is intentionally visual: not a pricing engine, but a fast signal that the course material sits in real quant rates territory.</p>
+                <div class="lab-controls" aria-label="Animation mode">
+                    <button class="lab-mode is-active" type="button" data-lab-mode="rates" aria-pressed="true">Rates fan</button>
+                    <button class="lab-mode" type="button" data-lab-mode="callable" aria-pressed="false">Callable</button>
+                    <button class="lab-mode" type="button" data-lab-mode="xva" aria-pressed="false">XVA</button>
+                </div>
+            </div>
+            <div class="quant-lab-panel reveal">
+                <canvas id="rates-lab-canvas" width="1200" height="720" aria-label="Animated stochastic rates visualization"></canvas>
+                <div class="lab-readout" aria-hidden="true">
+                    <span id="lab-model">Hull-White 1F</span>
+                    <span id="lab-a">a 0.10</span>
+                    <span id="lab-sigma">sigma 1.15%</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses" class="section course-deck">
+            <div class="section-intro">
+                <p class="kicker">Course desk</p>
+                <h2>Specialist programs for serious finance practitioners.</h2>
+                <p>Each course is built around the instruments, controls, and language used by unusually demanding market professionals: curve construction, calibration, optionality, securitization cashflows, market risk capital, and valuation adjustments.</p>
+            </div>
+
+            <div class="course-stack">
+                <article class="course-row reveal">
+                    <a class="course-media" href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer" aria-label="Open Mastering Interest Rate Derivatives">
+                        <img src="assets/ird-ficc-trading-floor.png" alt="Interest Rate Derivatives trading floor course image">
+                        <span class="course-discount">25% OFF</span>
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">IRD-01</p>
+                        <h3>Mastering Interest Rate Derivatives</h3>
+                        <p>A rates desk curriculum connecting SOFR curve construction, swaps, convexity, caps, floors, swaptions, calibration, and risk sensitivities.</p>
+                        <ul>
+                            <li>Curve building, discounting, and forward projection</li>
+                            <li>Swap valuation, Greeks, and trading floor applications</li>
+                            <li>Option pricing intuition for caps, floors, and swaptions</li>
+                        </ul>
+                        <p class="coupon-note">Coupon: <code>IRDERIVS25_APR_2026</code></p>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_APR_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link" href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Course details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-row course-row-offset reveal">
+                    <a class="course-media" href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer" aria-label="Open Mastering Mortgage and Asset Backed Securities">
+                        <img src="assets/mbs-multi-screens.png" alt="MBS and ABS trading screens course image">
+                        <span class="course-discount">25% OFF</span>
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">SEC-02</p>
+                        <h3>Mastering Mortgage and Asset Backed Securities</h3>
+                        <p>Securitization, prepayments, waterfalls, OAS, and analytics for structured product professionals.</p>
+                        <ul>
+                            <li>Cashflow and waterfall mechanics</li>
+                            <li>Prepayment and OAS intuition</li>
+                            <li>Intex and Python context</li>
+                        </ul>
+                        <p class="coupon-note">Coupon: <code>MBSABS25_APR_2026</code></p>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_APR_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link" href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Course details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="course-row reveal">
+                    <a class="course-media" href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer" aria-label="Open Fundamental Review of the Trading Book">
+                        <img src="assets/frtb-skyline.jpg" alt="Financial district skyline FRTB course image">
+                        <span class="course-discount">25% OFF</span>
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">RISK-03</p>
+                        <h3>Fundamental Review of the Trading Book</h3>
+                        <p>Market risk capital training covering the standardized approach, internal models, sensitivities, and practical examples.</p>
+                        <ul>
+                            <li>Basel III market risk framework</li>
+                            <li>SA and IMA foundations</li>
+                            <li>Excel examples and Python code</li>
+                        </ul>
+                        <p class="coupon-note">Coupon: <code>FRTB25_APR_2026</code></p>
+                        <div class="course-actions">
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_APR_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link" href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Course details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="xva-band reveal" aria-label="XVA Essentials">
+            <div class="xva-copy">
+                <p class="kicker">Hosted learning portal</p>
+                <h2>XVA Essentials in Financial Markets</h2>
+                <p>CVA, DVA, FVA, MVA, and KVA explained as practical pricing and risk adjustments that reshape derivatives portfolios.</p>
+            </div>
+            <a class="xva-link" href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer">
+                Launch XVA Essentials
+                <span aria-hidden="true">-&gt;</span>
+            </a>
+        </section>
+
+        <section id="systems" class="section systems-section">
+            <div class="section-intro section-intro-wide">
+                <p class="kicker">Live systems directory</p>
+                <h2>A working map of course sites, tools, and infrastructure.</h2>
+                <p>Filter the directory by function or search for a system by name, category, or URL.</p>
+            </div>
+
+            <div class="system-controls" aria-label="System filters">
+                <div class="filter-tabs" aria-label="Filter systems">
+                    <button class="filter-tab is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-tab" type="button" data-filter="course" aria-pressed="false">Courses</button>
+                    <button class="filter-tab" type="button" data-filter="app" aria-pressed="false">Apps</button>
+                    <button class="filter-tab" type="button" data-filter="infra" aria-pressed="false">Infra</button>
+                </div>
+                <label class="search-field">
+                    <span>Search systems</span>
+                    <input id="system-search" type="search" placeholder="Try QuantLib, MCP, XVA" autocomplete="off">
+                </label>
+            </div>
+
+            <div class="systems-grid" id="systems-grid" aria-live="polite">
+                <article class="system-card reveal" data-kind="course" data-search="interest rate derivatives course tglauner.com/mastering_interest_rate_derivatives">
+                    <span class="system-kind">Course site</span>
+                    <h3>Interest Rate Derivatives</h3>
+                    <p>Landing page and enrollment path for swaps, curves, and options training.</p>
+                    <code>tglauner.com/mastering_interest_rate_derivatives/</code>
+                    <a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="course" data-search="mortgage asset backed securities mbs abs course tglauner.com/mastering_mbs_and_abs">
+                    <span class="system-kind">Course site</span>
+                    <h3>MBS and ABS</h3>
+                    <p>Structured products course page covering cashflows, prepayment, and analytics.</p>
+                    <code>tglauner.com/mastering_mbs_and_abs/</code>
+                    <a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="course" data-search="frtb fundamentals market risk capital tglauner.com/frtb_fundamentals">
+                    <span class="system-kind">Course site</span>
+                    <h3>FRTB Fundamentals</h3>
+                    <p>Regulatory market risk training with practical SA and IMA context.</p>
+                    <code>tglauner.com/frtb_fundamentals/</code>
+                    <a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="course" data-search="xva essentials cva dva fva mva kva course-xva-essentials.tglauner.com">
+                    <span class="system-kind">Course portal</span>
+                    <h3>XVA Essentials</h3>
+                    <p>Hosted lecture portal for valuation adjustments in derivatives pricing.</p>
+                    <code>course-xva-essentials.tglauner.com/</code>
+                    <a href="https://course-xva-essentials.tglauner.com/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="app" data-search="quantlib tools quant.tglauner.com quantitative finance toolkit">
+                    <span class="system-kind">Tool</span>
+                    <h3>QuantLib Tools</h3>
+                    <p>Hosted quantitative finance toolkit on the quant subdomain.</p>
+                    <code>quant.tglauner.com/</code>
+                    <a href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="app" data-search="ai value advisor tglauner.com/ai_value_advisor">
+                    <span class="system-kind">Application</span>
+                    <h3>AI Value Advisor</h3>
+                    <p>Pitch and value message generator with a dedicated API and front end.</p>
+                    <code>tglauner.com/ai_value_advisor/</code>
+                    <a href="https://tglauner.com/ai_value_advisor/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="app" data-search="multi model talkshow tglauner.com/multi_model_talkshow">
+                    <span class="system-kind">Application</span>
+                    <h3>Multi-Model Talkshow</h3>
+                    <p>Multi-model chat interface served from the main domain.</p>
+                    <code>tglauner.com/multi_model_talkshow/</code>
+                    <a href="https://tglauner.com/multi_model_talkshow/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="infra" data-search="financial markets dashboard tglauner.com/dashboard">
+                    <span class="system-kind">Dashboard</span>
+                    <h3>Markets Dashboard</h3>
+                    <p>Compact market dashboard exposed from the main tglauner.com site.</p>
+                    <code>tglauner.com/dashboard/</code>
+                    <a href="https://tglauner.com/dashboard/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+            </div>
+
+            <p class="empty-state" id="empty-state" hidden>No systems match that filter.</p>
+        </section>
+
+        <section id="mcp" class="mcp-section section reveal">
+            <div class="mcp-copy">
+                <p class="kicker">Model Context Protocol</p>
+                <h2>Public MCP endpoint for structured profile context.</h2>
+                <p>The endpoint is available at <code>https://tglauner.com/mcp</code> for compatible MCP clients. Browser requests may receive an accept-header message unless they request the expected transport.</p>
+            </div>
+            <div class="mcp-terminal" aria-label="MCP connection details">
+                <div class="terminal-bar">
+                    <span></span><span></span><span></span>
+                </div>
+                <pre><code>endpoint: https://tglauner.com/mcp
+tool:     profile
+resource: profile.json
+repo:     github.com/tglauner/mcp.tglauner.com</code></pre>
+                <a href="https://github.com/tglauner/mcp.tglauner.com" target="_blank" rel="noopener noreferrer">View repository</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section section">
+            <div class="about-layout">
+                <div class="about-statement reveal">
+                    <p class="kicker">About</p>
+                    <h2>Practical finance education with quantitative depth.</h2>
+                    <p>TG Investments and Research provides financial education and open-source technology tools for retail and professional investors. Founder Tim Glauner brings more than 30 years of capital markets experience across New York, London, and Paris, with a background spanning quantitative finance, regulatory frameworks, and structured products.</p>
+                    <p>The material is written for people who expect precision: senior traders, structurers, model validators, risk managers, quant developers, and unusually strong learners who want the mechanics behind the desk conversation.</p>
+                </div>
+                <div class="about-proof reveal">
+                    <div>
+                        <span>Regulatory</span>
+                        <p>Basel III, FRTB, market risk, and banking controls.</p>
+                    </div>
+                    <div>
+                        <span>Markets</span>
+                        <p>Derivatives, structured products, trading floor workflows.</p>
+                    </div>
+                    <div>
+                        <span>Quant</span>
+                        <p>Python, Excel, modeling, analytics, and implementation detail.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="location-section" aria-label="Location map">
+            <div class="location-copy reveal">
+                <p class="kicker">Manhasset, New York</p>
+                <h2>Rooted on the North Shore.</h2>
+                <p>TG Investments and Research, LLC. PO Box 802, 155 Stonytown Road, Manhasset, NY 11030.</p>
+            </div>
+            <div class="map-frame reveal">
+                <iframe
+                    title="TG Investments and Research office location"
+                    src="https://www.google.com/maps?q=155+Stonytown+Rd,+Manhasset,+NY+11030&t=k&z=16&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 TG Investments and Research, LLC.</p>
+        <p>PO Box 802, 155 Stonytown Road, Manhasset, NY 11030</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
