@@ -154,6 +154,204 @@ pre {
     border-color: var(--green);
 }
 
+.new-quant-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+    min-height: 372px;
+    color: var(--paper-strong);
+    background:
+        linear-gradient(105deg, rgba(8, 11, 12, 0.98) 0%, rgba(13, 22, 23, 0.98) 55%, rgba(91, 26, 27, 0.96) 100%);
+    border-bottom: 1px solid rgba(255, 253, 247, 0.15);
+}
+
+.new-quant-brief,
+.course-quick-links {
+    padding: clamp(34px, 4.6vw, 70px) max(28px, calc((100vw - var(--max)) / 2));
+}
+
+.new-quant-brief {
+    position: relative;
+    overflow: hidden;
+    padding-right: clamp(28px, 5vw, 76px);
+    background:
+        linear-gradient(90deg, rgba(10, 14, 15, 0.04), rgba(10, 14, 15, 0.35)),
+        repeating-linear-gradient(90deg, transparent 0 56px, rgba(183, 211, 129, 0.07) 56px 57px);
+}
+
+.new-quant-brief::after {
+    content: "";
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    right: -145px;
+    bottom: -235px;
+    border: 1px solid rgba(183, 211, 129, 0.38);
+    border-radius: 50%;
+    box-shadow: 0 0 0 42px rgba(183, 211, 129, 0.05), 0 0 0 84px rgba(183, 211, 129, 0.03);
+    pointer-events: none;
+}
+
+.new-quant-heading,
+.quick-links-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+}
+
+.new-label,
+.new-quant-domain,
+.quick-links-header p,
+.quick-course-code {
+    margin: 0;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.new-label {
+    color: #b7d381;
+}
+
+.new-quant-domain,
+.quick-links-header p:not(.new-label) {
+    color: rgba(255, 253, 247, 0.58);
+}
+
+.new-quant-brief h2 {
+    max-width: 680px;
+    margin: 1rem 0 0;
+    font-size: clamp(2rem, 2.95vw, 3.12rem);
+}
+
+.quant-formulas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.26rem;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.2rem;
+    padding: 0.62rem 0.75rem;
+    color: rgba(255, 253, 247, 0.74);
+    background: rgba(255, 253, 247, 0.045);
+    border-left: 2px solid rgba(183, 211, 129, 0.72);
+}
+
+.quant-formulas code {
+    display: block;
+    width: 100%;
+    padding: 0.12rem 0;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    white-space: nowrap;
+}
+
+.quant-formulas sub,
+.quant-formulas sup {
+    line-height: 0;
+}
+
+.new-quant-brief > p {
+    max-width: 650px;
+    margin: 1.1rem 0 0;
+    color: rgba(255, 253, 247, 0.78);
+    font-size: 1.06rem;
+}
+
+.quant-signal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 1.55rem;
+    color: #b7d381;
+}
+
+.quant-signal code {
+    padding: 0.3rem 0.45rem;
+    color: rgba(255, 253, 247, 0.88);
+    background: rgba(255, 253, 247, 0.08);
+    border: 1px solid rgba(255, 253, 247, 0.18);
+    font-size: 0.76rem;
+}
+
+.quant-launch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-height: 42px;
+    margin-top: 1.6rem;
+    color: #b7d381;
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+}
+
+.quant-launch:hover {
+    color: var(--paper-strong);
+}
+
+.course-quick-links {
+    display: grid;
+    align-content: center;
+    padding-left: clamp(28px, 4vw, 64px);
+    background: rgba(104, 17, 20, 0.28);
+    border-left: 1px solid rgba(255, 253, 247, 0.16);
+}
+
+.quick-links-header {
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.quick-course-list {
+    border-top: 1px solid rgba(255, 253, 247, 0.22);
+}
+
+.quick-course {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255, 253, 247, 0.22);
+}
+
+.quick-course-code {
+    color: #e2b467;
+    font-size: 0.68rem;
+}
+
+.quick-course h3 {
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.12;
+}
+
+.quick-course h3 a,
+.quick-course div a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.quick-course h3 a:hover {
+    color: #b7d381;
+}
+
+.quick-course div {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: rgba(255, 253, 247, 0.7);
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.quick-course div a:hover {
+    color: #b7d381;
+}
+
 .hero-section {
     min-height: calc(86svh - var(--header-height));
     position: relative;
@@ -930,6 +1128,7 @@ h3 {
     }
 
     .desk-strip,
+    .new-quant-section,
     .quant-lab-section,
     .section-intro-wide,
     .course-row,
@@ -943,6 +1142,16 @@ h3 {
 
     .course-row-offset .course-media {
         order: initial;
+    }
+
+    .new-quant-brief,
+    .course-quick-links {
+        padding: clamp(38px, 7vw, 64px) max(28px, calc((100vw - var(--max)) / 2));
+    }
+
+    .course-quick-links {
+        border-top: 1px solid rgba(255, 253, 247, 0.16);
+        border-left: 0;
     }
 
     .systems-grid {
@@ -970,6 +1179,46 @@ h3 {
 
     .primary-nav a {
         padding: 0 0.65rem;
+    }
+
+    .new-quant-brief,
+    .course-quick-links {
+        min-width: 0;
+        padding: 34px 18px;
+    }
+
+    .new-quant-brief h2 {
+        font-size: 2.02rem;
+    }
+
+    .quant-formulas {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .new-quant-brief > p {
+        width: calc(100vw - 36px);
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .quant-signal {
+        max-width: calc(100vw - 36px);
+    }
+
+    .quick-links-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .quick-course {
+        grid-template-columns: 52px minmax(0, 1fr);
+        gap: 0.45rem 0.7rem;
+    }
+
+    .quick-course div {
+        grid-column: 2;
     }
 
     .hero-section {

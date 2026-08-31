@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="https://tglauner.com/assets/hero-bg.jpg">
     <meta name="twitter:image:alt" content="Trading floor background for TG Investments and Research">
     <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20260730">
+    <link rel="stylesheet" href="styles.css?v=20260831.3">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -164,7 +164,54 @@
     </header>
 
     <main id="main">
-        <section id="top" class="hero-section" aria-label="TG Investments and Research overview">
+        <section id="top" class="new-quant-section" aria-labelledby="new-quant-title">
+            <div class="new-quant-brief reveal-on-load">
+                <div class="new-quant-heading">
+                    <p class="new-label">New:</p>
+                    <p class="new-quant-domain">quant.tglauner.com</p>
+                </div>
+                <h2 id="new-quant-title">3-Factor model for callable cross currency interest rate swaps</h2>
+                <div class="quant-formulas" aria-label="Three-factor cross-currency model dynamics">
+                    <code>dr<sub>t</sub><sup>d</sup> = [θ<sub>d</sub>(t) − a<sub>d</sub>r<sub>t</sub><sup>d</sup>]dt + σ<sub>d</sub>dW<sub>t</sub><sup>d</sup> <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span> dr<sub>t</sub><sup>f</sup> = [θ<sub>f</sub>(t) − a<sub>f</sub>r<sub>t</sub><sup>f</sup>]dt + σ<sub>f</sub>dW<sub>t</sub><sup>f</sup></code>
+                    <code>dS<sub>t</sub>/S<sub>t</sub> = [r<sub>t</sub><sup>d</sup> − r<sub>t</sub><sup>f</sup>]dt + σ<sub>FX</sub>dW<sub>t</sub><sup>FX</sup></code>
+                </div>
+                <p>A three-factor curve model with a QuantLib Monte Carlo pricer, orchestrated by Codex + Claude. Longstaff-Schwartz regression estimates continuation value to make the early-exercise call.</p>
+                <div class="quant-signal" aria-label="Three-factor Monte Carlo pricing workflow">
+                    <code>3F curve state</code>
+                    <span aria-hidden="true">→</span>
+                    <code>MC paths</code>
+                    <span aria-hidden="true">→</span>
+                    <code>LSM exercise</code>
+                </div>
+                <a class="quant-launch" href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer">Open the Quant Workbench <span aria-hidden="true">↗</span></a>
+            </div>
+
+            <aside class="course-quick-links reveal-on-load" aria-label="Quick course links">
+                <div class="quick-links-header">
+                    <p class="new-label">Start learning</p>
+                    <p>Three desk-ready courses</p>
+                </div>
+                <div class="quick-course-list">
+                    <article class="quick-course">
+                        <p class="quick-course-code">IRD-01</p>
+                        <h3><a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Interest Rate Derivatives</a></h3>
+                        <div><a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
+                    </article>
+                    <article class="quick-course">
+                        <p class="quick-course-code">SEC-02</p>
+                        <h3><a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">MBS &amp; ABS</a></h3>
+                        <div><a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
+                    </article>
+                    <article class="quick-course">
+                        <p class="quick-course-code">RISK-03</p>
+                        <h3><a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">FRTB Fundamentals</a></h3>
+                        <div><a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
+                    </article>
+                </div>
+            </aside>
+        </section>
+
+        <section class="hero-section" aria-label="TG Investments and Research overview">
             <img class="hero-image" src="assets/hero-bg.jpg" alt="Trading desk screens and market workspace">
             <div class="hero-shade" aria-hidden="true"></div>
             <div class="hero-grid" aria-hidden="true">
