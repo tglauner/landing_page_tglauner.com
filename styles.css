@@ -228,28 +228,30 @@ pre {
 .quant-formulas {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.26rem;
+    align-content: center;
+    gap: 0.42rem;
     width: 100%;
+    min-height: clamp(150px, 13vw, 170px);
     max-width: 100%;
     margin-top: 1.2rem;
-    padding: 0.62rem 0.75rem;
+    padding: 0.82rem 0.9rem;
     color: rgba(255, 253, 247, 0.74);
     background: rgba(255, 253, 247, 0.045);
     border-left: 2px solid rgba(183, 211, 129, 0.72);
 }
 
-.quant-formulas code {
+.quant-formula-row {
     display: block;
     width: 100%;
     padding: 0.12rem 0;
-    font-size: 0.8rem;
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
     line-height: 1.35;
     white-space: nowrap;
 }
 
-.quant-formulas sub,
-.quant-formulas sup {
-    line-height: 0;
+.quant-formula-row mjx-container {
+    margin: 0 !important;
+    color: rgba(255, 253, 247, 0.82);
 }
 
 .new-quant-brief > p {
@@ -303,6 +305,11 @@ pre {
 .quick-links-header {
     justify-content: space-between;
     margin-bottom: 1rem;
+}
+
+.quick-links-header .new-label {
+    font-size: clamp(1rem, 1.15vw, 1.15rem);
+    letter-spacing: 0.1em;
 }
 
 .quick-course-list {
@@ -1140,12 +1147,22 @@ h3 {
         grid-template-columns: 1fr;
     }
 
+    .new-quant-section {
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
     .course-row-offset .course-media {
         order: initial;
     }
 
     .new-quant-brief,
     .course-quick-links {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         padding: clamp(38px, 7vw, 64px) max(28px, calc((100vw - var(--max)) / 2));
     }
 
@@ -1193,7 +1210,13 @@ h3 {
 
     .quant-formulas {
         width: 100%;
-        overflow-x: auto;
+        min-height: 148px;
+        padding: 0.75rem;
+        overflow: hidden;
+    }
+
+    .quant-formula-row {
+        font-size: clamp(0.92rem, 4vw, 1.04rem);
     }
 
     .new-quant-brief > p {
@@ -1210,6 +1233,10 @@ h3 {
         align-items: flex-start;
         flex-direction: column;
         gap: 0.25rem;
+    }
+
+    .quick-links-header .new-label {
+        font-size: 1.05rem;
     }
 
     .quick-course {

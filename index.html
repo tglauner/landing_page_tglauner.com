@@ -23,7 +23,14 @@
     <meta name="twitter:image" content="https://tglauner.com/assets/hero-bg.jpg">
     <meta name="twitter:image:alt" content="Trading floor background for TG Investments and Research">
     <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20260831.3">
+    <link rel="stylesheet" href="styles.css?v=20260831.7">
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [["\\(", "\\)"]] },
+            chtml: { scale: 0.92 }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -172,8 +179,9 @@
                 </div>
                 <h2 id="new-quant-title">3-Factor model for callable cross currency interest rate swaps</h2>
                 <div class="quant-formulas" aria-label="Three-factor cross-currency model dynamics">
-                    <code>dr<sub>t</sub><sup>d</sup> = [θ<sub>d</sub>(t) − a<sub>d</sub>r<sub>t</sub><sup>d</sup>]dt + σ<sub>d</sub>dW<sub>t</sub><sup>d</sup> <span aria-hidden="true">&nbsp;&nbsp;|&nbsp;&nbsp;</span> dr<sub>t</sub><sup>f</sup> = [θ<sub>f</sub>(t) − a<sub>f</sub>r<sub>t</sub><sup>f</sup>]dt + σ<sub>f</sub>dW<sub>t</sub><sup>f</sup></code>
-                    <code>dS<sub>t</sub>/S<sub>t</sub> = [r<sub>t</sub><sup>d</sup> − r<sub>t</sub><sup>f</sup>]dt + σ<sub>FX</sub>dW<sub>t</sub><sup>FX</sup></code>
+                    <div class="quant-formula-row">\(\displaystyle \mathrm{d}r_t^{d} = [\theta_d(t) - a_d r_t^{d}]\,\mathrm{d}t + \sigma_d\,\mathrm{d}W_t^{d} \)</div>
+                    <div class="quant-formula-row">\(\displaystyle \mathrm{d}r_t^{f} = [\theta_f(t) - a_f r_t^{f}]\,\mathrm{d}t + \sigma_f\,\mathrm{d}W_t^{f} \)</div>
+                    <div class="quant-formula-row">\(\displaystyle \frac{\mathrm{d}S_t}{S_t} = [r_t^{d} - r_t^{f}]\,\mathrm{d}t + \sigma_{FX}\,\mathrm{d}W_t^{FX} \)</div>
                 </div>
                 <p>A three-factor curve model with a QuantLib Monte Carlo pricer, orchestrated by Codex + Claude. Longstaff-Schwartz regression estimates continuation value to make the early-exercise call.</p>
                 <div class="quant-signal" aria-label="Three-factor Monte Carlo pricing workflow">
