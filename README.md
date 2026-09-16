@@ -32,7 +32,6 @@ The homepage `Systems` section is based on a droplet audit performed on April 14
 - `https://tglauner.com/visitor_log/`
 - `https://openclaw.tglauner.com/`
 - `https://quant.tglauner.com/`
-- `https://oil-gasoline-simulator-iran-war-2026.tglauner.com/`
 - `https://tglauner.com/mcp`
 
 Notes:
@@ -84,7 +83,6 @@ for url in \
   https://tglauner.com/visitor_log/ \
   https://openclaw.tglauner.com/ \
   https://quant.tglauner.com/ \
-  https://oil-gasoline-simulator-iran-war-2026.tglauner.com/ \
   https://tglauner.com/mcp
 do
   echo "-- $url"
@@ -97,7 +95,6 @@ Health-oriented checks:
 
 ```bash
 curl -sS https://tglauner.com/healthz
-curl -sS https://oil-gasoline-simulator-iran-war-2026.tglauner.com/health
 curl -sS "https://course-xva-essentials.tglauner.com/api/metrics/site_snapshot?host=course-xva-essentials.tglauner.com"
 curl -sS https://quant.tglauner.com/health
 ```
