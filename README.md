@@ -29,8 +29,6 @@ The homepage `Systems` section is based on a droplet audit performed on April 14
 - `https://tglauner.com/frtb_fundamentals/`
 - `https://course-xva-essentials.tglauner.com/`
 - `https://tglauner.com/dashboard/`
-- `https://tglauner.com/multi_model_talkshow/`
-- `https://tglauner.com/ai_value_advisor/`
 - `https://tglauner.com/visitor_log/`
 - `https://openclaw.tglauner.com/`
 - `https://quant.tglauner.com/`
@@ -83,8 +81,6 @@ for url in \
   https://tglauner.com/frtb_fundamentals/ \
   https://course-xva-essentials.tglauner.com/ \
   https://tglauner.com/dashboard/ \
-  https://tglauner.com/multi_model_talkshow/ \
-  https://tglauner.com/ai_value_advisor/ \
   https://tglauner.com/visitor_log/ \
   https://openclaw.tglauner.com/ \
   https://quant.tglauner.com/ \
