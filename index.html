@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="https://tglauner.com/assets/hero-bg.jpg">
     <meta name="twitter:image:alt" content="Trading floor background for TG Investments and Research">
     <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20260831.7">
+    <link rel="stylesheet" href="styles.css?v=20260917.1">
     <script>
         window.MathJax = {
             tex: { inlineMath: [["\\(", "\\)"]] },
@@ -163,7 +163,8 @@
             <span class="brand-name">TG Investments and Research</span>
         </a>
         <nav class="primary-nav" aria-label="Main navigation">
-            <a href="#courses">Courses</a>
+            <a class="nav-start" href="#start-learning">Start learning</a>
+            <a href="#courses">All courses</a>
             <a href="#systems">Systems</a>
             <a href="#mcp">MCP</a>
             <a href="#about">About</a>
@@ -171,69 +172,51 @@
     </header>
 
     <main id="main">
-        <section id="top" class="new-quant-section" aria-labelledby="new-quant-title">
-            <div class="new-quant-brief reveal-on-load">
-                <div class="new-quant-heading">
-                    <p class="new-label">New:</p>
-                    <p class="new-quant-domain">quant.tglauner.com</p>
-                </div>
-                <h2 id="new-quant-title">3-Factor model for callable cross currency interest rate swaps</h2>
-                <div class="quant-formulas" aria-label="Three-factor cross-currency model dynamics">
-                    <div class="quant-formula-row">\(\displaystyle \mathrm{d}r_t^{d} = [\theta_d(t) - a_d r_t^{d}]\,\mathrm{d}t + \sigma_d\,\mathrm{d}W_t^{d} \)</div>
-                    <div class="quant-formula-row">\(\displaystyle \mathrm{d}r_t^{f} = [\theta_f(t) - a_f r_t^{f}]\,\mathrm{d}t + \sigma_f\,\mathrm{d}W_t^{f} \)</div>
-                    <div class="quant-formula-row">\(\displaystyle \frac{\mathrm{d}S_t}{S_t} = [r_t^{d} - r_t^{f}]\,\mathrm{d}t + \sigma_{FX}\,\mathrm{d}W_t^{FX} \)</div>
-                </div>
-                <p>A three-factor curve model with a QuantLib Monte Carlo pricer, orchestrated by Codex + Claude. Longstaff-Schwartz regression estimates continuation value to make the early-exercise call.</p>
-                <div class="quant-signal" aria-label="Three-factor Monte Carlo pricing workflow">
-                    <code>3F curve state</code>
-                    <span aria-hidden="true">→</span>
-                    <code>MC paths</code>
-                    <span aria-hidden="true">→</span>
-                    <code>LSM exercise</code>
-                </div>
-                <a class="quant-launch" href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer">Open the Quant Workbench <span aria-hidden="true">↗</span></a>
+        <section id="top" class="new-quant-strip" aria-labelledby="new-quant-title">
+            <div class="new-quant-content reveal-on-load">
+                <p class="new-label">New on Quant</p>
+                <h2 id="new-quant-title">3-Factor Model for Callable Cross-Currency Swaps</h2>
+                <p>A QuantLib Monte Carlo workbench with Longstaff-Schwartz exercise.</p>
+                <a class="quant-launch" href="https://quant.tglauner.com/" target="_blank" rel="noopener noreferrer">Open the model <span aria-hidden="true">↗</span></a>
             </div>
-
-            <aside class="course-quick-links reveal-on-load" aria-label="Quick course links">
-                <div class="quick-links-header">
-                    <p class="new-label">Start learning</p>
-                    <p>Three desk-ready courses</p>
-                </div>
-                <div class="quick-course-list">
-                    <article class="quick-course">
-                        <p class="quick-course-code">IRD-01</p>
-                        <h3><a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Interest Rate Derivatives</a></h3>
-                        <div><a href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
-                    </article>
-                    <article class="quick-course">
-                        <p class="quick-course-code">SEC-02</p>
-                        <h3><a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">MBS &amp; ABS</a></h3>
-                        <div><a href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
-                    </article>
-                    <article class="quick-course">
-                        <p class="quick-course-code">RISK-03</p>
-                        <h3><a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">FRTB Fundamentals</a></h3>
-                        <div><a href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_SEP_2026" target="_blank" rel="noopener noreferrer">Udemy <span aria-hidden="true">↗</span></a><a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Details <span aria-hidden="true">→</span></a></div>
-                    </article>
-                </div>
-            </aside>
         </section>
 
-        <section class="hero-section" aria-label="TG Investments and Research overview">
+        <section id="start-learning" class="hero-section" aria-labelledby="start-learning-title">
             <img class="hero-image" src="assets/hero-bg.jpg" alt="Trading desk screens and market workspace">
             <div class="hero-shade" aria-hidden="true"></div>
             <div class="hero-grid" aria-hidden="true">
                 <span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
 
-            <div class="hero-copy reveal-on-load">
-                <p class="kicker">Advanced rates, XVA, and structured products</p>
-                <h1>TG Investments and Research</h1>
-                <p class="hero-lede">Quantitative finance courses and working tools for people operating close to the front office: SOFR curves, swaptions, callable structures, XVA, securitized cashflows, and market risk capital.</p>
-                <div class="hero-actions" aria-label="Primary actions">
-                    <a class="text-action text-action-strong" href="#courses">View courses <span aria-hidden="true">-&gt;</span></a>
-                    <a class="text-action" href="#systems">Open systems <span aria-hidden="true">-&gt;</span></a>
+            <div class="hero-layout reveal-on-load">
+                <div class="hero-copy">
+                    <p class="hero-brand">TG Investments and Research</p>
+                    <p class="kicker">Professional finance courses</p>
+                    <h1 id="start-learning-title">Start learning <span>for the desk.</span></h1>
+                    <p class="hero-lede">Choose a lecture, enroll on Udemy, and work through the mechanics behind rates, structured products, and market risk.</p>
+                    <div class="hero-actions" aria-label="Course actions">
+                        <a class="text-action text-action-strong" href="#courses">Compare all courses <span aria-hidden="true">→</span></a>
+                    </div>
                 </div>
+
+                <aside class="hero-enrollment" aria-label="Enroll in a course">
+                    <p class="hero-enrollment-kicker">Choose your lecture</p>
+                    <h2>Enroll today</h2>
+                    <div class="hero-course-list">
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_SEP_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Interest Rate Derivatives</strong><small>IRD-01 · 25% off on Udemy</small></span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_SEP_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>MBS &amp; ABS</strong><small>SEC-02 · 25% off on Udemy</small></span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_SEP_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>FRTB Fundamentals</strong><small>RISK-03 · 25% off on Udemy</small></span>
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </aside>
             </div>
 
             <aside class="desk-strip reveal-on-load" aria-label="Experience summary">
@@ -242,12 +225,12 @@
                     <span class="desk-label">Years in capital markets</span>
                 </div>
                 <div>
-                    <span class="desk-number">NY-LON-PAR</span>
+                    <span class="desk-number">New York · London · Paris</span>
                     <span class="desk-label">Trading and risk perspective</span>
                 </div>
                 <div>
                     <span class="desk-number">SOFR / Swaptions / XVA</span>
-                    <span class="desk-label">Built for demanding quant and trading conversations</span>
+                    <span class="desk-label">Lectures that make complex desk conversations practical</span>
                 </div>
             </aside>
         </section>

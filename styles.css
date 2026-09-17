@@ -154,54 +154,37 @@ pre {
     border-color: var(--green);
 }
 
-.new-quant-section {
-    display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
-    min-height: 372px;
+.primary-nav .nav-start {
+    color: var(--ink);
+    background: #b7d381;
+    border-bottom: 0;
+    font-weight: 800;
+}
+
+.primary-nav .nav-start:hover {
+    color: var(--ink);
+    background: var(--paper-strong);
+}
+
+.new-quant-strip {
     color: var(--paper-strong);
     background:
-        linear-gradient(105deg, rgba(8, 11, 12, 0.98) 0%, rgba(13, 22, 23, 0.98) 55%, rgba(91, 26, 27, 0.96) 100%);
+        linear-gradient(100deg, rgba(8, 11, 12, 0.99), rgba(23, 37, 35, 0.97) 64%, rgba(104, 17, 20, 0.94));
     border-bottom: 1px solid rgba(255, 253, 247, 0.15);
 }
 
-.new-quant-brief,
-.course-quick-links {
-    padding: clamp(34px, 4.6vw, 70px) max(28px, calc((100vw - var(--max)) / 2));
+.new-quant-content {
+    width: min(var(--max), calc(100% - 56px));
+    min-height: 122px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto minmax(280px, 1fr) minmax(200px, 0.8fr) auto;
+    align-items: center;
+    gap: clamp(16px, 2.4vw, 36px);
+    padding: 20px 0;
 }
 
-.new-quant-brief {
-    position: relative;
-    overflow: hidden;
-    padding-right: clamp(28px, 5vw, 76px);
-    background:
-        linear-gradient(90deg, rgba(10, 14, 15, 0.04), rgba(10, 14, 15, 0.35)),
-        repeating-linear-gradient(90deg, transparent 0 56px, rgba(183, 211, 129, 0.07) 56px 57px);
-}
-
-.new-quant-brief::after {
-    content: "";
-    position: absolute;
-    width: 340px;
-    height: 340px;
-    right: -145px;
-    bottom: -235px;
-    border: 1px solid rgba(183, 211, 129, 0.38);
-    border-radius: 50%;
-    box-shadow: 0 0 0 42px rgba(183, 211, 129, 0.05), 0 0 0 84px rgba(183, 211, 129, 0.03);
-    pointer-events: none;
-}
-
-.new-quant-heading,
-.quick-links-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-}
-
-.new-label,
-.new-quant-domain,
-.quick-links-header p,
-.quick-course-code {
+.new-label {
     margin: 0;
     font-family: Menlo, Consolas, Monaco, monospace;
     font-size: 0.76rem;
@@ -214,68 +197,17 @@ pre {
     color: #b7d381;
 }
 
-.new-quant-domain,
-.quick-links-header p:not(.new-label) {
-    color: rgba(255, 253, 247, 0.58);
+.new-quant-content h2 {
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: clamp(1.1rem, 1.65vw, 1.45rem);
+    line-height: 1.12;
 }
 
-.new-quant-brief h2 {
-    max-width: 680px;
-    margin: 1rem 0 0;
-    font-size: clamp(2rem, 2.95vw, 3.12rem);
-}
-
-.quant-formulas {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-content: center;
-    gap: 0.42rem;
-    width: 100%;
-    min-height: clamp(150px, 13vw, 170px);
-    max-width: 100%;
-    margin-top: 1.2rem;
-    padding: 0.82rem 0.9rem;
-    color: rgba(255, 253, 247, 0.74);
-    background: rgba(255, 253, 247, 0.045);
-    border-left: 2px solid rgba(183, 211, 129, 0.72);
-}
-
-.quant-formula-row {
-    display: block;
-    width: 100%;
-    padding: 0.12rem 0;
-    font-size: clamp(1rem, 1.35vw, 1.2rem);
-    line-height: 1.35;
-    white-space: nowrap;
-}
-
-.quant-formula-row mjx-container {
-    margin: 0 !important;
-    color: rgba(255, 253, 247, 0.82);
-}
-
-.new-quant-brief > p {
-    max-width: 650px;
-    margin: 1.1rem 0 0;
+.new-quant-content > p:not(.new-label) {
+    margin: 0;
     color: rgba(255, 253, 247, 0.78);
-    font-size: 1.06rem;
-}
-
-.quant-signal {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.55rem;
-    margin-top: 1.55rem;
-    color: #b7d381;
-}
-
-.quant-signal code {
-    padding: 0.3rem 0.45rem;
-    color: rgba(255, 253, 247, 0.88);
-    background: rgba(255, 253, 247, 0.08);
-    border: 1px solid rgba(255, 253, 247, 0.18);
-    font-size: 0.76rem;
+    font-size: 0.94rem;
+    line-height: 1.35;
 }
 
 .quant-launch {
@@ -283,7 +215,7 @@ pre {
     align-items: center;
     gap: 0.45rem;
     min-height: 42px;
-    margin-top: 1.6rem;
+    margin: 0;
     color: #b7d381;
     font-weight: 800;
     text-decoration: none;
@@ -294,78 +226,14 @@ pre {
     color: var(--paper-strong);
 }
 
-.course-quick-links {
-    display: grid;
-    align-content: center;
-    padding-left: clamp(28px, 4vw, 64px);
-    background: rgba(104, 17, 20, 0.28);
-    border-left: 1px solid rgba(255, 253, 247, 0.16);
-}
-
-.quick-links-header {
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.quick-links-header .new-label {
-    font-size: clamp(1rem, 1.15vw, 1.15rem);
-    letter-spacing: 0.1em;
-}
-
-.quick-course-list {
-    border-top: 1px solid rgba(255, 253, 247, 0.22);
-}
-
-.quick-course {
-    display: grid;
-    grid-template-columns: 64px minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 0.9rem 0;
-    border-bottom: 1px solid rgba(255, 253, 247, 0.22);
-}
-
-.quick-course-code {
-    color: #e2b467;
-    font-size: 0.68rem;
-}
-
-.quick-course h3 {
-    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
-    font-size: 1.02rem;
-    line-height: 1.12;
-}
-
-.quick-course h3 a,
-.quick-course div a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.quick-course h3 a:hover {
-    color: #b7d381;
-}
-
-.quick-course div {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    color: rgba(255, 253, 247, 0.7);
-    font-size: 0.8rem;
-    font-weight: 800;
-}
-
-.quick-course div a:hover {
-    color: #b7d381;
-}
-
 .hero-section {
-    min-height: calc(86svh - var(--header-height));
+    min-height: calc(82svh - var(--header-height));
     position: relative;
     isolation: isolate;
     display: grid;
-    align-items: end;
-    padding: clamp(48px, 8vw, 96px) 28px 34px;
+    align-content: space-between;
+    gap: 42px;
+    padding: clamp(52px, 7vw, 88px) 28px 34px;
     color: var(--paper-strong);
     overflow: hidden;
 }
@@ -403,10 +271,27 @@ pre {
     border-left: 1px solid rgba(244, 241, 232, 0.19);
 }
 
-.hero-copy {
-    width: min(900px, 100%);
+.hero-layout {
+    width: min(var(--max), 100%);
     margin: 0 auto;
-    transform: translateX(-7vw);
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.78fr);
+    align-items: center;
+    gap: clamp(32px, 7vw, 112px);
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero-brand {
+    margin: 0 0 1.2rem;
+    color: rgba(255, 253, 247, 0.64);
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .kicker {
@@ -434,8 +319,13 @@ h3 {
 }
 
 h1 {
-    max-width: 820px;
-    font-size: 7.25rem;
+    max-width: 880px;
+    font-size: clamp(4.8rem, 8vw, 8.75rem);
+    letter-spacing: -0.06em;
+}
+
+h1 span {
+    display: block;
 }
 
 h2 {
@@ -447,7 +337,7 @@ h3 {
 }
 
 .hero-lede {
-    max-width: 660px;
+    max-width: 570px;
     margin: 1.15rem 0 0;
     color: rgba(255, 253, 247, 0.84);
     font-size: 1.28rem;
@@ -486,6 +376,77 @@ h3 {
 
 .text-action-strong {
     color: #b7d381;
+}
+
+.hero-enrollment {
+    padding: clamp(22px, 3vw, 34px);
+    color: var(--paper-strong);
+    background: rgba(8, 8, 6, 0.72);
+    border: 1px solid rgba(255, 253, 247, 0.28);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.hero-enrollment-kicker {
+    margin: 0 0 0.45rem;
+    color: #b7d381;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-enrollment h2 {
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+    font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+    line-height: 1.05;
+}
+
+.hero-course-list {
+    display: grid;
+    margin-top: 1.4rem;
+    border-top: 1px solid rgba(255, 253, 247, 0.24);
+}
+
+.hero-course-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 82px;
+    padding: 0.85rem 0;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 253, 247, 0.24);
+    transition: color 160ms ease, padding 160ms ease;
+}
+
+.hero-course-cta:hover {
+    padding-right: 0.38rem;
+    color: #b7d381;
+}
+
+.hero-course-cta strong,
+.hero-course-cta small {
+    display: block;
+}
+
+.hero-course-cta strong {
+    font-size: 1.08rem;
+    line-height: 1.2;
+}
+
+.hero-course-cta small {
+    margin-top: 0.28rem;
+    color: rgba(255, 253, 247, 0.64);
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.7rem;
+}
+
+.hero-course-cta > span:last-child {
+    color: #b7d381;
+    font-size: 1.18rem;
 }
 
 .desk-strip {
@@ -1118,10 +1079,6 @@ h3 {
         min-height: 82svh;
     }
 
-    .hero-copy {
-        transform: none;
-    }
-
     h1 {
         font-size: 5.4rem;
     }
@@ -1134,8 +1091,8 @@ h3 {
         font-size: 2.05rem;
     }
 
+    .hero-layout,
     .desk-strip,
-    .new-quant-section,
     .quant-lab-section,
     .section-intro-wide,
     .course-row,
@@ -1147,28 +1104,21 @@ h3 {
         grid-template-columns: 1fr;
     }
 
-    .new-quant-section {
-        grid-template-columns: minmax(0, 1fr);
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
+    .new-quant-content {
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        min-height: 104px;
+    }
+
+    .new-quant-content > p:not(.new-label) {
+        display: none;
+    }
+
+    .hero-layout {
+        gap: 36px;
     }
 
     .course-row-offset .course-media {
         order: initial;
-    }
-
-    .new-quant-brief,
-    .course-quick-links {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding: clamp(38px, 7vw, 64px) max(28px, calc((100vw - var(--max)) / 2));
-    }
-
-    .course-quick-links {
-        border-top: 1px solid rgba(255, 253, 247, 0.16);
-        border-left: 0;
     }
 
     .systems-grid {
@@ -1198,59 +1148,42 @@ h3 {
         padding: 0 0.65rem;
     }
 
-    .new-quant-brief,
-    .course-quick-links {
-        min-width: 0;
-        padding: 34px 18px;
+    .new-quant-content {
+        width: min(100% - 36px, var(--max));
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5rem;
+        padding: 18px 0;
     }
 
-    .new-quant-brief h2 {
-        font-size: 2.02rem;
+    .new-label {
+        grid-column: auto;
     }
 
-    .quant-formulas {
-        width: 100%;
-        min-height: 148px;
-        padding: 0.75rem;
-        overflow: hidden;
+    .new-quant-content h2 {
+        font-size: 1rem;
     }
 
-    .quant-formula-row {
-        font-size: clamp(0.92rem, 4vw, 1.04rem);
-    }
-
-    .new-quant-brief > p {
-        width: calc(100vw - 36px);
-        max-width: 100%;
-        overflow-wrap: anywhere;
-    }
-
-    .quant-signal {
-        max-width: calc(100vw - 36px);
-    }
-
-    .quick-links-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .quick-links-header .new-label {
-        font-size: 1.05rem;
-    }
-
-    .quick-course {
-        grid-template-columns: 52px minmax(0, 1fr);
-        gap: 0.45rem 0.7rem;
-    }
-
-    .quick-course div {
-        grid-column: 2;
+    .quant-launch {
+        min-height: 34px;
+        font-size: 0.86rem;
+        justify-self: start;
     }
 
     .hero-section {
-        min-height: 78svh;
+        min-height: auto;
         padding: 42px 18px 24px;
+    }
+
+    .hero-layout {
+        min-width: 0;
+        gap: 30px;
+    }
+
+    .hero-copy,
+    .hero-lede {
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 
     .kicker {
@@ -1280,6 +1213,10 @@ h3 {
 
     .hero-actions {
         gap: 0.85rem;
+    }
+
+    .hero-enrollment {
+        padding: 22px;
     }
 
     .desk-strip,
