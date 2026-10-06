@@ -13,7 +13,7 @@ Static landing page for `https://tglauner.com/`.
 
 - Image-led hero and capital-markets experience summary
 - Interactive rates, callable-boundary, and XVA visualization
-- Course offers for Interest Rate Derivatives, MBS/ABS, and FRTB
+- Course offers for Interest Rate Derivatives, MBS/ABS, FRTB, and VaR
 - XVA Essentials launch section
 - Searchable and filterable live systems directory
 - Public MCP section
@@ -27,6 +27,7 @@ The homepage `Systems` section is based on a droplet audit performed on April 14
 - `https://tglauner.com/mastering_interest_rate_derivatives/`
 - `https://tglauner.com/mastering_mbs_and_abs/`
 - `https://tglauner.com/frtb_fundamentals/`
+- `https://tglauner.com/value_at_risk/`
 - `https://course-xva-essentials.tglauner.com/`
 - `https://tglauner.com/dashboard/`
 - `https://tglauner.com/visitor_log/`
@@ -78,6 +79,7 @@ for url in \
   https://tglauner.com/mastering_interest_rate_derivatives/ \
   https://tglauner.com/mastering_mbs_and_abs/ \
   https://tglauner.com/frtb_fundamentals/ \
+  https://tglauner.com/value_at_risk/ \
   https://course-xva-essentials.tglauner.com/ \
   https://tglauner.com/dashboard/ \
   https://tglauner.com/visitor_log/ \
@@ -108,3 +110,18 @@ git revert HEAD
 git push origin main
 ssh root@45.55.196.120 "git -C /var/www/html pull --ff-only origin main"
 ```
+
+## Course offers and shared skills
+
+See `COUPON_OPERATIONS.md` and `course-offers.json` for the four-course inventory, shared coupon names, verified prices, and individual expirations. VaR is served from this repository's `value_at_risk/` directory.
+
+Open `tglauner.code-workspace` to see the homepage, all course repositories, analytics, and shared skill repository together. Install the versioned coupon command and canonical skill discovery links:
+
+```bash
+bash scripts/install_coupon_skills.sh
+python3 scripts/test_coupon_rollover.py
+python3 scripts/validate_course_offers.py
+python3 scripts/check_production_links.py --report output/production-links.json
+```
+
+The production checker visits the homepage and all four course sites, follows their legal pages, checks anchors and referenced assets, and reports external browser checks separately. Mail and phone links receive syntax checks; the checker does not send messages or place calls.

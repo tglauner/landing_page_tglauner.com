@@ -18,3 +18,16 @@ Thumbs.db
 
 # Optional: ignore Apache artifacts if they appear here
 .htaccess
+
+# Local Python and browser/deployment artifacts
+__pycache__/
+*.py[cod]
+.venv*/
+.playwright-cli/
+output/
+
+# Private local configuration
+.env
+.env.*
+!.env.example
+confidential/

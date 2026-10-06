@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TG Investments and Research | FRTB, IR Derivatives, MBS/ABS, XVA Courses</title>
+    <title>TG Investments and Research | VaR, FRTB, IR Derivatives, MBS/ABS, XVA Courses</title>
     <meta name="description" content="Professional finance training in FRTB, interest rate derivatives, MBS/ABS, and XVA led by Tim Glauner with 30+ years in capital markets.">
     <meta name="author" content="Tim Glauner">
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
@@ -23,7 +23,7 @@
     <meta name="twitter:image" content="https://tglauner.com/assets/hero-bg.jpg">
     <meta name="twitter:image:alt" content="Trading floor background for TG Investments and Research">
     <link rel="icon" href="assets/favicon.png" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=20260917.1">
+    <link rel="stylesheet" href="styles.css?v=20260918.1">
     <script>
         window.MathJax = {
             tex: { inlineMath: [["\\(", "\\)"]] },
@@ -32,127 +32,145 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
         {
-            "@context": "https://schema.org",
-            "@graph": [
+            "@type": "Organization",
+            "@id": "https://tglauner.com/#organization",
+            "name": "TG Investments and Research, LLC",
+            "url": "https://tglauner.com/",
+            "logo": "https://tglauner.com/assets/favicon.png",
+            "founder": {
+                "@id": "https://tglauner.com/#tim-glauner"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "PO Box 802, 155 Stonytown Road",
+                "addressLocality": "Manhasset",
+                "addressRegion": "NY",
+                "postalCode": "11030",
+                "addressCountry": "US"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://tglauner.com/#tim-glauner",
+            "name": "Tim Glauner",
+            "jobTitle": "Founder and Instructor",
+            "affiliation": {
+                "@id": "https://tglauner.com/#organization"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://tglauner.com/#website",
+            "name": "TG Investments and Research",
+            "url": "https://tglauner.com/",
+            "publisher": {
+                "@id": "https://tglauner.com/#organization"
+            }
+        },
+        {
+            "@type": "ItemList",
+            "@id": "https://tglauner.com/#courses",
+            "name": "Finance Courses",
+            "itemListElement": [
                 {
-                    "@type": "Organization",
-                    "@id": "https://tglauner.com/#organization",
-                    "name": "TG Investments and Research, LLC",
-                    "url": "https://tglauner.com/",
-                    "logo": "https://tglauner.com/assets/favicon.png",
-                    "founder": {
-                        "@id": "https://tglauner.com/#tim-glauner"
-                    },
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "PO Box 802, 155 Stonytown Road",
-                        "addressLocality": "Manhasset",
-                        "addressRegion": "NY",
-                        "postalCode": "11030",
-                        "addressCountry": "US"
-                    }
-                },
-                {
-                    "@type": "Person",
-                    "@id": "https://tglauner.com/#tim-glauner",
-                    "name": "Tim Glauner",
-                    "jobTitle": "Founder and Instructor",
-                    "affiliation": {
-                        "@id": "https://tglauner.com/#organization"
-                    }
-                },
-                {
-                    "@type": "WebSite",
-                    "@id": "https://tglauner.com/#website",
-                    "name": "TG Investments and Research",
-                    "url": "https://tglauner.com/",
-                    "publisher": {
-                        "@id": "https://tglauner.com/#organization"
-                    }
-                },
-                {
-                    "@type": "ItemList",
-                    "@id": "https://tglauner.com/#courses",
-                    "name": "Finance Courses",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "position": 1,
-                            "item": {
-                                "@type": "Course",
-                                "name": "Mastering Interest Rate Derivatives",
-                                "description": "Swaps, curves, caps, floors, and swaptions with end-to-end trading floor workflows.",
-                                "url": "https://tglauner.com/mastering_interest_rate_derivatives/",
-                                "image": "https://tglauner.com/assets/ird-ficc-trading-floor.png",
-                                "inLanguage": "en",
-                                "provider": {
-                                    "@id": "https://tglauner.com/#organization"
-                                },
-                                "instructor": {
-                                    "@id": "https://tglauner.com/#tim-glauner"
-                                }
-                            }
+                    "@type": "ListItem",
+                    "position": 1,
+                    "item": {
+                        "@type": "Course",
+                        "name": "Mastering Interest Rate Derivatives",
+                        "description": "Swaps, curves, caps, floors, and swaptions with end-to-end trading floor workflows.",
+                        "url": "https://tglauner.com/mastering_interest_rate_derivatives/",
+                        "image": "https://tglauner.com/assets/ird-ficc-trading-floor.png",
+                        "inLanguage": "en",
+                        "provider": {
+                            "@id": "https://tglauner.com/#organization"
                         },
-                        {
-                            "@type": "ListItem",
-                            "position": 2,
-                            "item": {
-                                "@type": "Course",
-                                "name": "Mastering Mortgage and Asset Backed Securities",
-                                "description": "Securitization, prepayment models, CMOs, OAS, and analytics with professional tools.",
-                                "url": "https://tglauner.com/mastering_mbs_and_abs/",
-                                "image": "https://tglauner.com/assets/mbs-multi-screens.png",
-                                "inLanguage": "en",
-                                "provider": {
-                                    "@id": "https://tglauner.com/#organization"
-                                },
-                                "instructor": {
-                                    "@id": "https://tglauner.com/#tim-glauner"
-                                }
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 3,
-                            "item": {
-                                "@type": "Course",
-                                "name": "Fundamental Review of the Trading Book",
-                                "description": "FRTB framework coverage across standardized and internal models with practical examples.",
-                                "url": "https://tglauner.com/frtb_fundamentals/",
-                                "image": "https://tglauner.com/assets/frtb-skyline.jpg",
-                                "inLanguage": "en",
-                                "provider": {
-                                    "@id": "https://tglauner.com/#organization"
-                                },
-                                "instructor": {
-                                    "@id": "https://tglauner.com/#tim-glauner"
-                                }
-                            }
-                        },
-                        {
-                            "@type": "ListItem",
-                            "position": 4,
-                            "item": {
-                                "@type": "Course",
-                                "name": "XVA Essentials in Financial Markets",
-                                "description": "CVA, DVA, FVA, MVA, and KVA fundamentals with practical pricing context.",
-                                "url": "https://course-xva-essentials.tglauner.com/",
-                                "image": "https://tglauner.com/assets/hero-bg.jpg",
-                                "inLanguage": "en",
-                                "provider": {
-                                    "@id": "https://tglauner.com/#organization"
-                                },
-                                "instructor": {
-                                    "@id": "https://tglauner.com/#tim-glauner"
-                                }
-                            }
+                        "instructor": {
+                            "@id": "https://tglauner.com/#tim-glauner"
                         }
-                    ]
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "item": {
+                        "@type": "Course",
+                        "name": "Mastering Mortgage and Asset Backed Securities",
+                        "description": "Securitization, prepayment models, CMOs, OAS, and analytics with professional tools.",
+                        "url": "https://tglauner.com/mastering_mbs_and_abs/",
+                        "image": "https://tglauner.com/assets/mbs-multi-screens.png",
+                        "inLanguage": "en",
+                        "provider": {
+                            "@id": "https://tglauner.com/#organization"
+                        },
+                        "instructor": {
+                            "@id": "https://tglauner.com/#tim-glauner"
+                        }
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "item": {
+                        "@type": "Course",
+                        "name": "Fundamental Review of the Trading Book",
+                        "description": "FRTB framework coverage across standardized and internal models with practical examples.",
+                        "url": "https://tglauner.com/frtb_fundamentals/",
+                        "image": "https://tglauner.com/assets/frtb-skyline.jpg",
+                        "inLanguage": "en",
+                        "provider": {
+                            "@id": "https://tglauner.com/#organization"
+                        },
+                        "instructor": {
+                            "@id": "https://tglauner.com/#tim-glauner"
+                        }
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "item": {
+                        "@type": "Course",
+                        "name": "Value at Risk (VaR)",
+                        "description": "Parametric, Monte Carlo and historical VaR methods and their pros and cons.",
+                        "url": "https://tglauner.com/value_at_risk/",
+                        "inLanguage": "en",
+                        "provider": {
+                            "@id": "https://tglauner.com/#organization"
+                        },
+                        "instructor": {
+                            "@id": "https://tglauner.com/#tim-glauner"
+                        }
+                    }
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "item": {
+                        "@type": "Course",
+                        "name": "XVA Essentials in Financial Markets",
+                        "description": "CVA, DVA, FVA, MVA, and KVA fundamentals with practical pricing context.",
+                        "url": "https://course-xva-essentials.tglauner.com/",
+                        "image": "https://tglauner.com/assets/hero-bg.jpg",
+                        "inLanguage": "en",
+                        "provider": {
+                            "@id": "https://tglauner.com/#organization"
+                        },
+                        "instructor": {
+                            "@id": "https://tglauner.com/#tim-glauner"
+                        }
+                    }
                 }
             ]
         }
+    ]
+}
     </script>
+<link rel="stylesheet" href="/frtb_fundamentals/cookie-styles.css">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -163,7 +181,7 @@
             <span class="brand-name">TG Investments and Research</span>
         </a>
         <nav class="primary-nav" aria-label="Main navigation">
-            <a class="nav-start" href="#start-learning">Start learning</a>
+            <a class="nav-start" href="#start-learning">Buy now</a>
             <a href="#courses">All courses</a>
             <a href="#systems">Systems</a>
             <a href="#mcp">MCP</a>
@@ -191,46 +209,53 @@
             <div class="hero-layout reveal-on-load">
                 <div class="hero-copy">
                     <p class="hero-brand">TG Investments and Research</p>
-                    <p class="kicker">Professional finance courses</p>
-                    <h1 id="start-learning-title">Start learning <span>for the desk.</span></h1>
-                    <p class="hero-lede">Choose a lecture, enroll on Udemy, and work through the mechanics behind rates, structured products, and market risk.</p>
+                    <p class="kicker">Career-advancing finance courses</p>
+                    <h1 id="start-learning-title">Build the skills <span>that move careers forward.</span></h1>
+                    <p class="hero-lede">Built for bright students, operations professionals, and ambitious candidates targeting front-office, middle-office, or risk roles. Learn the concepts that show up in interviews, desk conversations, and real rates and structured-products work.</p>
+                    <div class="hero-trust-row" aria-label="Course benefits">
+                        <span>Students</span>
+                        <span>Operations</span>
+                        <span>Career switchers</span>
+                    </div>
                     <div class="hero-actions" aria-label="Course actions">
-                        <a class="text-action text-action-strong" href="#courses">Compare all courses <span aria-hidden="true">→</span></a>
+                        <a class="primary-cta" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">Enroll now — 25% off <span aria-hidden="true">→</span></a>
+                        <a class="text-action" href="#courses">Compare courses</a>
                     </div>
                 </div>
 
                 <aside class="hero-enrollment" aria-label="Enroll in a course">
                     <p class="hero-enrollment-kicker">Choose your lecture</p>
-                    <h2>Enroll today</h2>
+                    <h2>Enroll now</h2>
                     <div class="hero-course-list">
-                        <a class="hero-course-cta" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_SEP_2026" target="_blank" rel="noopener noreferrer">
-                            <span><strong>Interest Rate Derivatives</strong><small>IRD-01 · 25% off on Udemy</small></span>
-                            <span aria-hidden="true">↗</span>
+                        <a class="hero-course-cta is-featured" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Interest Rate Derivatives</strong><small>IRD-01 · Instant access · 25% off</small></span>
+                            <span class="cta-buy-wrap"><span class="cta-badge">Most popular</span><span class="cta-buy">Buy now</span></span>
                         </a>
-                        <a class="hero-course-cta" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_SEP_2026" target="_blank" rel="noopener noreferrer">
-                            <span><strong>MBS &amp; ABS</strong><small>SEC-02 · 25% off on Udemy</small></span>
-                            <span aria-hidden="true">↗</span>
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>MBS &amp; ABS</strong><small>SEC-02 · Instant access · 25% off</small></span>
+                            <span class="cta-buy">Buy now</span>
                         </a>
-                        <a class="hero-course-cta" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_SEP_2026" target="_blank" rel="noopener noreferrer">
-                            <span><strong>FRTB Fundamentals</strong><small>RISK-03 · 25% off on Udemy</small></span>
-                            <span aria-hidden="true">↗</span>
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">
+                            <span><strong>FRTB Fundamentals</strong><small>RISK-03 · Instant access · 25% off</small></span>
+                            <span class="cta-buy">Buy now</span>
                         </a>
+                        <a class="hero-course-cta" href="https://www.udemy.com/course/value-at-risk-var/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer"><span><strong>Value at Risk (VaR)</strong><small>RISK-04 · Instant access · 25% off</small></span><span class="cta-buy">Buy now</span></a>
                     </div>
                 </aside>
             </div>
 
             <aside class="desk-strip reveal-on-load" aria-label="Experience summary">
                 <div>
-                    <span class="desk-number">30+</span>
-                    <span class="desk-label">Years in capital markets</span>
+                    <span class="desk-number">Career edge</span>
+                    <span class="desk-label">Built for interview prep and portfolio growth</span>
                 </div>
                 <div>
-                    <span class="desk-number">New York · London · Paris</span>
-                    <span class="desk-label">Trading and risk perspective</span>
+                    <span class="desk-number">Front · mid · risk</span>
+                    <span class="desk-label">Practical concepts for teams moving toward the desk</span>
                 </div>
                 <div>
                     <span class="desk-number">SOFR / Swaptions / XVA</span>
-                    <span class="desk-label">Lectures that make complex desk conversations practical</span>
+                    <span class="desk-label">Language you can use in interviews and real market conversations</span>
                 </div>
             </aside>
         </section>
@@ -278,9 +303,9 @@
                             <li>Swap valuation, Greeks, and trading floor applications</li>
                             <li>Option pricing intuition for caps, floors, and swaptions</li>
                         </ul>
-                        <p class="coupon-note">Coupon: <code>IRDERIVS25_SEP_2026</code></p>
+                        <p class="coupon-note">Coupon: <code>25OFF_TG_OCT_2026</code></p>
                         <div class="course-actions">
-                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=IRDERIVS25_SEP_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mastering-interest-rate-derivatives/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
                             <a class="line-link" href="https://tglauner.com/mastering_interest_rate_derivatives/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
                     </div>
@@ -300,9 +325,9 @@
                             <li>Prepayment and OAS intuition</li>
                             <li>Intex and Python context</li>
                         </ul>
-                        <p class="coupon-note">Coupon: <code>MBSABS25_SEP_2026</code></p>
+                        <p class="coupon-note">Coupon: <code>25OFF_TG_OCT_2026</code></p>
                         <div class="course-actions">
-                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=MBSABS25_SEP_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/mortgage-backed-and-asset-backed-securities-mbsabs/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
                             <a class="line-link" href="https://tglauner.com/mastering_mbs_and_abs/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
                     </div>
@@ -322,11 +347,25 @@
                             <li>SA and IMA foundations</li>
                             <li>Excel examples and Python code</li>
                         </ul>
-                        <p class="coupon-note">Coupon: <code>FRTB25_SEP_2026</code></p>
+                        <p class="coupon-note">Coupon: <code>25OFF_TG_OCT_2026</code></p>
                         <div class="course-actions">
-                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=FRTB25_SEP_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
+                            <a class="line-link line-link-strong" href="https://www.udemy.com/course/fundamental-review-of-the-trading-book/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a>
                             <a class="line-link" href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Course details</a>
                         </div>
+                    </div>
+                </article>
+                <article class="course-row course-row-offset reveal">
+                    <a class="course-media" href="/value_at_risk/" aria-label="Open Value at Risk">
+                        <img src="assets/frtb-skyline.jpg" alt="Financial district skyline">
+                        <span class="course-discount">25% OFF</span>
+                    </a>
+                    <div class="course-body">
+                        <p class="course-code">RISK-04</p>
+                        <h3>Value at Risk (VaR)</h3>
+                        <p>Compare parametric, Monte Carlo, and historical VaR methods and understand their strengths and limitations.</p>
+                        <ul><li>Variance-covariance assumptions</li><li>Monte Carlo portfolio scenarios</li><li>Historical returns and method selection</li></ul>
+                        <p class="coupon-note">Coupon: <code>25OFF_TG_OCT_2026</code></p>
+                        <div class="course-actions"><a class="line-link line-link-strong" href="https://www.udemy.com/course/value-at-risk-var/?couponCode=25OFF_TG_OCT_2026" target="_blank" rel="noopener noreferrer">Enroll on Udemy - 25% OFF</a><a class="line-link" href="/value_at_risk/">Course details</a></div>
                     </div>
                 </article>
             </div>
@@ -387,6 +426,10 @@
                     <p>Regulatory market risk training with practical SA and IMA context.</p>
                     <code>tglauner.com/frtb_fundamentals/</code>
                     <a href="https://tglauner.com/frtb_fundamentals/" target="_blank" rel="noopener noreferrer">Open</a>
+                </article>
+
+                <article class="system-card reveal" data-kind="course" data-search="var value at risk monte carlo historical parametric">
+                    <span class="system-kind">Course</span><h3>Value at Risk (VaR)</h3><p>Parametric, Monte Carlo, and historical portfolio risk.</p><code>tglauner.com/value_at_risk/</code><a href="/value_at_risk/">Open</a>
                 </article>
 
                 <article class="system-card reveal" data-kind="course" data-search="xva essentials cva dva fva mva kva course-xva-essentials.tglauner.com">
@@ -485,5 +528,9 @@ repo:     github.com/tglauner/mcp.tglauner.com</code></pre>
     </footer>
 
     <script src="app.js?v=20260730"></script>
+<script src="/frtb_fundamentals/cookie-consent.js?v=20261006"></script>
+<p class="cookie-policy-links"><a href="/frtb_fundamentals/privacy-policy.html">Privacy policy</a> · <a href="/frtb_fundamentals/cookie-policy.html">Cookie policy</a> · <a href="#" id="cookie-preferences-link">Cookie preferences</a></p>
+<script>window.tgAnalyticsConfig = {appId: "tglauner", requireConsent: true};</script>
+<script src="https://tglauner.com/visitor_analytics/tracking/tracking.js?v=20261006" defer></script>
 </body>
 </html>

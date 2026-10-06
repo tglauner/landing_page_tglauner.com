@@ -1,0 +1,33 @@
+{
+  "folders": [
+    {
+      "name": "Homepage and VaR",
+      "path": "."
+    },
+    {
+      "name": "IRD",
+      "path": "../mastering_interest_rate_derivatives"
+    },
+    {
+      "name": "MBS and ABS",
+      "path": "../mastering_mbs_and_abs"
+    },
+    {
+      "name": "FRTB",
+      "path": "../frtb_fundamentals"
+    },
+    {
+      "name": "Analytics",
+      "path": "../visitor_analytics"
+    },
+    {
+      "name": "Shared skills",
+      "path": "../../cross_project_tools"
+    }
+  ],
+  "settings": {
+    "git.autoRepositoryDetection": "subFolders",
+    "git.repositoryScanMaxDepth": 2,
+    "scm.alwaysShowRepositories": true
+  }
+}

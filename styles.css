@@ -298,8 +298,9 @@ pre {
     margin: 0 0 0.65rem;
     color: var(--red);
     font-family: "DIN Condensed", "Avenir Next Condensed", sans-serif;
-    font-size: 1.18rem;
+    font-size: 0.82rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
 
@@ -319,9 +320,9 @@ h3 {
 }
 
 h1 {
-    max-width: 880px;
-    font-size: clamp(4.8rem, 8vw, 8.75rem);
-    letter-spacing: -0.06em;
+    max-width: 760px;
+    font-size: clamp(3.6rem, 5.2vw, 5.8rem);
+    letter-spacing: -0.045em;
 }
 
 h1 span {
@@ -337,18 +338,63 @@ h3 {
 }
 
 .hero-lede {
-    max-width: 570px;
+    max-width: 560px;
     margin: 1.15rem 0 0;
     color: rgba(255, 253, 247, 0.84);
-    font-size: 1.28rem;
+    font-size: 1.08rem;
+    line-height: 1.5;
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
-    gap: 1.4rem;
+    gap: 1rem;
     flex-wrap: wrap;
     margin-top: 2rem;
+}
+
+.hero-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+}
+
+.hero-trust-row span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(183, 211, 129, 0.6);
+    border-radius: 999px;
+    color: #dff1b3;
+    background: rgba(183, 211, 129, 0.08);
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.primary-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 52px;
+    padding: 0.8rem 1.2rem;
+    color: #11100d;
+    background: linear-gradient(135deg, #d8ecaf, #9ccf6e);
+    border: 1px solid rgba(17, 16, 13, 0.12);
+    box-shadow: 0 18px 30px rgba(130, 175, 92, 0.24);
+    border-radius: 8px;
+    font-weight: 900;
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.primary-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 22px 34px rgba(130, 175, 92, 0.28);
 }
 
 .text-action,
@@ -419,12 +465,20 @@ h3 {
     color: inherit;
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 253, 247, 0.24);
-    transition: color 160ms ease, padding 160ms ease;
+    transition: color 160ms ease, padding 160ms ease, transform 160ms ease;
+}
+
+.hero-course-cta.is-featured {
+    margin-top: 0.35rem;
+    padding-top: 0.95rem;
+    padding-bottom: 0.95rem;
+    border-top: 1px solid rgba(183, 211, 129, 0.36);
 }
 
 .hero-course-cta:hover {
     padding-right: 0.38rem;
     color: #b7d381;
+    transform: translateX(2px);
 }
 
 .hero-course-cta strong,
@@ -444,9 +498,30 @@ h3 {
     font-size: 0.7rem;
 }
 
-.hero-course-cta > span:last-child {
+.cta-buy-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    text-align: right;
+}
+
+.cta-badge {
+    color: #dff1b3;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 0.56rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-course-cta .cta-buy {
     color: #b7d381;
-    font-size: 1.18rem;
+    font-weight: 800;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .desk-strip {
@@ -1187,11 +1262,11 @@ h3 {
     }
 
     .kicker {
-        font-size: 1.02rem;
+        font-size: 0.82rem;
     }
 
     h1 {
-        font-size: 3.55rem;
+        font-size: 3.25rem;
     }
 
     h2 {
