@@ -1,8 +1,10 @@
 # Course coupon operations
 
-The four Udemy courses use the same paid code, `25OFF_TG_OCT_2026`, and the same FREE code, `FREE_TG_OCT_2026`. Each code is a separate coupon on each course. The paid coupons were created and verified enabled on October 6, 2026, at USD 149.99. Existing FREE coupons remain enabled.
+The four Udemy courses use the paid code `25OFF_TG_NOV_2026`. Each code is a separate coupon on each course. All four November paid coupons were created and verified enabled on November 5, 2026, at USD 149.99, with unlimited redemptions.
 
-`course-offers.json` records the course IDs, canonical slugs, prices, and actual paid expiration timestamps. The paid offers expire on November 6 at 1:03–1:05 a.m. Eastern; the date is not the calendar month-end. Udemy's displayed Pacific expiration time changes from daylight to standard time during the offer.
+`course-offers.json` records the course IDs, canonical slugs, prices, and actual expiration timestamps. The November paid offers expire on December 6, 2026: IRD at 3:08 p.m. Eastern, MBS/ABS and FRTB at 3:09 p.m., and VaR at 3:10 p.m. These are 31-day offers, independent of calendar month-end.
+
+Existing `FREE_TG_OCT_2026` coupons were preserved and verified enabled. They expire on November 6, 2026, at 12:41–12:43 a.m. Eastern; individual timestamps are recorded as `free_expires_at`. No November FREE coupons were created or advertised. Paid and FREE codes may therefore have different month suffixes. The release report records the Git revisions, production backup, deployment status, and live verification results for this rollover.
 
 From the common website parent folder, validate the source:
 
@@ -19,6 +21,8 @@ For the next monthly rollover, first inspect Udemy's existing coupons and alloca
 coupon-rollover OCT_2026 NOV_2026 --paid-prefix 25OFF_TG --preview
 coupon-rollover OCT_2026 NOV_2026 --paid-prefix 25OFF_TG
 ```
+
+The generic helper rolls both paid and FREE suffixes. For a paid-only rollover, apply only paid-code changes and preserve the verified FREE code, its timestamps, helper examples, and historical release notes.
 
 Update the readable month labels, `course-offers.json` expiry values, and each course body's `data-offer-deadline` from the verified Udemy tables. These are intentionally not inferred from the code name. The source validator checks that pages and metadata agree.
 

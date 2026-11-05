@@ -1,6 +1,6 @@
 {
-  "verified_on": "2026-10-06",
-  "paid_code": "25OFF_TG_OCT_2026",
+  "verified_on": "2026-11-05",
+  "paid_code": "25OFF_TG_NOV_2026",
   "free_code": "FREE_TG_OCT_2026",
   "paid_price_usd": "149.99",
   "regular_price_usd": "199.99",
@@ -10,28 +10,32 @@
       "course_id": 5610754,
       "title": "Mastering Interest Rate Derivatives",
       "slug": "mastering-interest-rate-derivatives",
-      "expires_at": "2026-11-06T06:05:00Z"
+      "expires_at": "2026-12-06T20:08:00Z",
+      "free_expires_at": "2026-11-06T05:43:00Z"
     },
     {
       "folder": "mastering_mbs_and_abs",
       "course_id": 6305907,
       "title": "Mastering MBS and ABS: From Basics to Advanced Analytics",
       "slug": "mortgage-backed-and-asset-backed-securities-mbsabs",
-      "expires_at": "2026-11-06T06:04:00Z"
+      "expires_at": "2026-12-06T20:09:00Z",
+      "free_expires_at": "2026-11-06T05:41:00Z"
     },
     {
       "folder": "frtb_fundamentals",
       "course_id": 6098529,
       "title": "Fundamental Review of the Trading Book (FRTB)",
       "slug": "fundamental-review-of-the-trading-book",
-      "expires_at": "2026-11-06T06:03:00Z"
+      "expires_at": "2026-12-06T20:09:00Z",
+      "free_expires_at": "2026-11-06T05:42:00Z"
     },
     {
       "folder": "value_at_risk",
       "course_id": 6097489,
       "title": "Value at Risk (VaR)",
       "slug": "value-at-risk-var",
-      "expires_at": "2026-11-06T06:04:00Z"
+      "expires_at": "2026-12-06T20:10:00Z",
+      "free_expires_at": "2026-11-06T05:42:00Z"
     }
   ]
 }
